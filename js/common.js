@@ -12,6 +12,7 @@ const enElements = document.getElementsByClassName('English');
 const jaElements = document.getElementsByClassName('Japanese');
 const zhElements = document.getElementsByClassName('Chinese');
 const params     = new URLSearchParams(window.location.search);
+const breakpoint = window.matchMedia("(max-width:700px)");
 
 var ubcElements   = null;
 var primeElements = null; 
@@ -318,7 +319,7 @@ function checkLogoPosition() {
     asideRect = aside.getBoundingClientRect();
     //console.log(mainRect.top, mainRect.bottom, asideRect.bottom);
     var flmg = Math.min(1.0*vw, 1920 * 0.01);
-    var headMenuHeight = Math.min(15*vw, 1920 * 0.135) 
+    var headMenuHeight = Math.min(15*vw, 1920 * 0.15) 
     var bmg = headMenuHeight * (1-5/15) - logoOriginalHeight - flmg;
     var sidebarHeight = sidebar.clientHeight;
     var mainHeight = main.clientHeight;
@@ -335,7 +336,7 @@ function checkLogoPosition() {
       backElement.style.position = 'fixed';
       backElement.style.top = "0";
       frontElement.style.left = "max(0px, calc((100% - 1920px) / 2))";
-      backElement.style.left = "max(0px, calc((100% - 1920px) / 2))";
+      backElement.style.left  = "max(0px, calc((100% - 1920px) / 2))";
       
       //console.log(frontElement.width, frontElement.height, logoOriginalWidth, logoOriginalHeight);
       //frontElement.style.height = logoOriginalHeight;
@@ -438,6 +439,10 @@ if (vw > 700){
 
 window.addEventListener('orientationchange', function() {
     location.reload();
+});
+
+breakpoint.addEventListener("change", () => {
+  window.location.reload();
 });
 
 if (params.has('lang') === true) {

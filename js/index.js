@@ -297,10 +297,8 @@ function scrollImg() {
   vw = window.innerWidth;
   vh = window.innerHeight;
   mainRect   = main.getBoundingClientRect();
-  if(mainRect.top > 0){
-    var scrlh = 0.75 * (header.clientHeight - mainRect.top);
-    container.style.backgroundPosition = `top calc(calc(-1.211 * min(0.25 * 1920px, 25vw)) + ${scrlh}px) right 50%`;
-  };
+  var scrlh = 0.75 * (header.clientHeight - mainRect.top);
+  container.style.backgroundPosition = `top calc(calc(-1.211 * min(0.25 * 1920px, 25vw)) + ${scrlh}px) right 50%`;
 }
 
 function checkLogoPosition() {
