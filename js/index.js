@@ -7,6 +7,12 @@ const pplV_ZH = document.getElementById('pplV_ZH');
 const pplO_EN = document.getElementById('pplO_EN');
 const pplO_JA = document.getElementById('pplO_JA');
 const pplO_ZH = document.getElementById('pplO_ZH');
+const mpplV_EN = document.getElementById('mpplV_EN');
+const mpplV_JA = document.getElementById('mpplV_JA');
+const mpplV_ZH = document.getElementById('mpplV_ZH');
+const mpplO_EN = document.getElementById('mpplO_EN');
+const mpplO_JA = document.getElementById('mpplO_JA');
+const mpplO_ZH = document.getElementById('mpplO_ZH');
 const container  = document.getElementById('container');
 const enElements = document.getElementsByClassName('English');
 const jaElements = document.getElementsByClassName('Japanese');
@@ -419,6 +425,14 @@ pplV_ZH.addEventListener('click', add_param(pplV_ZH, "UBC"));
 pplO_EN.addEventListener('click', add_param(pplO_EN, "Osaka"));
 pplO_JA.addEventListener('click', add_param(pplO_JA, "Osaka"));
 pplO_ZH.addEventListener('click', add_param(pplO_ZH, "Osaka"));
+
+mpplV_EN.addEventListener('click', add_param(mpplV_EN, "UBC"));
+mpplV_JA.addEventListener('click', add_param(mpplV_JA, "UBC"));
+mpplV_ZH.addEventListener('click', add_param(mpplV_ZH, "UBC"));
+
+mpplO_EN.addEventListener('click', add_param(mpplO_EN, "Osaka"));
+mpplO_JA.addEventListener('click', add_param(mpplO_JA, "Osaka"));
+mpplO_ZH.addEventListener('click', add_param(mpplO_ZH, "Osaka"));
 
 window.addEventListener('scroll', checkLangPosition);
 window.addEventListener('resize', checkLangPosition);
