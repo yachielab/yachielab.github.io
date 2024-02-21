@@ -1,0 +1,103 @@
+body{ 
+  background: #0055E3;
+}
+
+main{ 
+  overflow: hidden;
+  font-size: clamp(calc(1.05 * 5pt) , calc(1.05 * 1.0vw) , calc(1.05 * 14.4pt));
+  height: max(35em, clamp(67.5px, 27vw, 500px));
+  background: #FFFFFF00;
+}
+
+main .posts{
+  font-size: clamp(calc(1.05 * 5pt) , calc(1.05 * 1.0vw) , calc(1.05 * 14.4pt));
+  background: #0044DDBB;
+}
+
+aside {
+  color: #FFFFFF;
+}
+
+footer{
+  background-image:url("");
+}
+
+#mobilemainimg {
+  display: none;
+}
+
+@media screen and (max-width: 700px){
+ 
+  #mobile_header img {
+    display: none;
+  } 
+ 
+  /*.menu-icon__bar {
+    background-color: #0055E3;
+    height: 2.5px;
+    transition: transform 0.2s ease-in-out;
+    width: 100%;
+    margin: 0;
+  }*/
+  body {
+    background: white;  
+    overscroll-behavior: none;
+    overflow: hidden;
+  }
+
+  aside {
+    background-color:#D8D8D8
+  }
+
+  aside .sidebar{
+    display: none;
+  }
+  
+  main { 
+    position: relative; 
+    padding-top: 70px;
+    z-index: 0;
+    width: 100%;
+    min-height: 100vh;
+    height: auto;
+    background: linear-gradient(180deg, #FFFFFF00 0px, #FFFFFF00 70px, #FFFFFFBB 70px, #FFFFFFBB 100%);
+  }
+  
+  main .posts{
+    width: 100vw;
+    flex-wrap: nowrap;
+    height: auto;
+    background: #FFFFFF00;
+    max-height: none;
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+  }
+  
+  .posts h1{
+    padding-top: 15px;
+    margin-bottom: 10px;
+  }
+  
+  #mobilemainimg {
+    display: block;
+    position: absolute;
+    margin: 0;
+    z-index: 2; 
+    top: calc(50% - 11vw - 70px);
+    left: 19.5%;
+    width: 60%;
+    animation: scaleUpDown 1.5s infinite alternate;
+  }
+
+
+  @keyframes scaleUpDown {
+    from {
+      transform: scale(1.0); 
+    }
+    to {
+      transform: scale(1.075); 
+    }
+  }
+
+}

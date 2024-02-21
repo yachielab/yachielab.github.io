@@ -1,0 +1,127 @@
+.paper{
+  display: flex;
+  font-size: clamp(calc(1.1 * 6pt) , calc(1.1 * 1.0vw) , calc(1.1 * 14.4pt));
+  font-weight: 400;
+  line-height: clamp(calc(1.65 * 6pt) , calc(1.65 * 1.0vw) , calc(1.65 * 14.5pt));
+  flex-direction: row;
+  width: 100%;
+  margin-bottom: clamp(3.75px, 1.5vw, calc(30px * 0.96));  
+} 
+
+.paper_txt_w_photo{
+  width: 80%;
+  padding-right: 0px;
+} 
+ 
+.paper_txt_wo_photo{
+  width: 100%;
+  padding-right: 0px;
+}
+
+.paper .author{
+  margin-top: 0px;
+  margin-bottom: clamp(0.25px, 0.1vw, calc(2px * 0.96));
+  font-weight: 300;
+  color: #303030;
+}
+
+.paper .author .member{
+  font-weight: 300;
+  color: #FF0000;
+}
+
+.paper .title{
+  margin-top: 0px;
+  margin-bottom: clamp(0.375px, 0.15vw, calc(3px * 0.96));
+  font-weight: 300;
+  color: #303030;
+  text-decoration: underline;
+}
+
+.paper .info { 
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-weight: 300;
+  color: #303030;
+}
+
+.paper .info .JT{ 
+  font-weight: 600;
+  font-style: italic;
+  color: #0033CC;
+  text-decoration: none;
+}
+
+.paper .info .JT:hover{
+  text-decoration: underline;
+}
+
+.paper .info .PMID{ 
+  margin: 0px;
+  font-weight: 300;
+  color: #0033CC;
+  text-decoration: none;
+}
+
+.paper .info .PMID:hover{
+  text-decoration: underline;
+}
+
+.paper .info .pdf-link{ 
+  margin: 0px;
+  font-weight: 300;
+  color: #0033CC;
+  text-decoration: none;
+}
+
+.paper .info .pdf-link:hover{
+  text-decoration: underline;
+}
+
+.paper .supinfo{
+  font-size: clamp(calc(0.95 * 6pt) , calc(0.95 * 1.0vw) , calc(0.95 * 14.4pt)); 
+  font-weight: 300;
+  line-height: 1.2em;
+  margin-top: calc(15 * min(80vw, 1400px) / 1400);
+  margin-bottom: calc(10 * min(80vw, 1400px) / 1400);
+}
+
+.paper .supinfo a{
+  color: #0033CC;
+  text-decoration: none;
+}
+
+.paper .supinfo a:hover{
+  text-decoration: underline;
+}
+
+.paper_photo {
+  width: calc(20% - 20px);
+  margin-right: 0px;
+  margin-left: 20px;
+}
+
+.paper_photo img{
+  width: 100%;
+}
+
+@media screen and (max-width: 600px){
+  .paper{
+    font-size: clamp(calc(1.2 * 6pt) , calc(1.2 * 1.0vw) , calc(1.2 * 12pt));
+    line-height: clamp(calc(1.8 * 6pt) , calc(1.8 * 1.0vw) , calc(1.8 * 12pt));
+  }
+  
+  .paper .supinfo{
+    font-size: clamp(calc(1.05 * 6pt) , calc(1.05 * 1.0vw) , calc(1.05 * 12pt)); 
+  }
+  .paper_txt_w_photo{
+    width: 75%;
+    padding-right: 0px;
+  } 
+
+  .paper_photo {
+    width: calc(25% - 10px);
+    margin-left: 10px;
+  }
+}
+
