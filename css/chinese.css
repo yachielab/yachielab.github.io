@@ -1,4 +1,4 @@
-h1.Chinese {
+p1.Chinese {
   font-family: raleway, "Noto Sans SC", sans-serif !important;
 }
 
@@ -11,7 +11,7 @@ h3.Chinese {
 }
 
 .content.Chinese {
-  font-family: rayleway, "Noto Sans SC",  sans-serif !important;
+  font-family: roboto, "Noto Sans SC",  sans-serif !important;
 }
 
 aside .content.Chinese {
