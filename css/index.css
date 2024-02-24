@@ -39,11 +39,11 @@ footer{
     width: 100%;
     margin: 0;
   }*/
+
   body {
     background: white;  
     overscroll-behavior: none;
-    overflow: hidden;
-  }
+  } 
 
   aside {
     background-color:#D8D8D8
