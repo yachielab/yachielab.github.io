@@ -324,8 +324,8 @@ function checkLogoPosition() {
     mainRect  = main.getBoundingClientRect();
     asideRect = aside.getBoundingClientRect();
     //console.log(mainRect.top, mainRect.bottom, asideRect.bottom);
-    var flmg = Math.min(1.0*vw, 1920 * 0.01);
-    var headMenuHeight = Math.min(15*vw, 1920 * 0.15) 
+    var flmg = Math.min(0.01*vw, 1920 * 0.01);
+    var headMenuHeight = Math.min(0.15*vw, 1920 * 0.15) 
     var bmg = headMenuHeight * (1-5/15) - logoOriginalHeight - flmg;
     var sidebarHeight = sidebar.clientHeight;
     var mainHeight = main.clientHeight;
@@ -335,7 +335,7 @@ function checkLogoPosition() {
     //} else {
     //  aside.style.position = 'absolute';
     //}
-    
+   
     if (mainRect.top < header.clientHeight*(1-5/15)) {
       frontElement.style.position = 'fixed';
       frontElement.style.top = "0";
