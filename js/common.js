@@ -494,7 +494,6 @@ for (var i = 0; i < primeElements.length; i++) {
   original_primeElements.push(primeElements[i].style.display);
 }
 
-/*
 if (params.has('affil') === true) {
   const affil = params.get('affil');
   if(affil === "UBC"){
@@ -502,7 +501,7 @@ if (params.has('affil') === true) {
   }else if(affil === "Osaka"){
     setOsaka();
   }
-}*/
+}
 
 if (vw > 700){
  aside.style.display = "flex";
