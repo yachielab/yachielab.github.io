@@ -500,3 +500,15 @@ if (vw > 700){
  aside.style.display = "flex";
 }
 
+if (params.has('develop') === true && params.get('develop') === "TRUE") {
+  const links = document.querySelectorAll('a');
+  links.forEach(link => {
+    var href = link.getAttribute('href'); 
+    if (link.getAttribute('href') === null){
+      null;
+    }else if (link.getAttribute('href').startsWith("http") === false){
+      href = href + "&develop=TRUE"
+      link.setAttribute("href", href);
+    }
+  });
+}
