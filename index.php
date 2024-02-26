@@ -1,5 +1,5 @@
 <?php
-header("Location:https://yachielab.github.io/");
+header("Location:https://yachie-lab.org");
 exit();
 // PukiWiki - Yet another WikiWikiWeb clone.
 // $Id: index.php,v 1.9 2006/05/13 07:39:49 henoheno Exp $
