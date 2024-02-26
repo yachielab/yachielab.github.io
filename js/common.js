@@ -29,6 +29,19 @@ JA.style.marginRight = "1px";
 JA.style.borderRight = "0px solid #FFFFFF"; 
 var LANG   = "EN";
 
+if (params.has('develop') === true && params.get('develop') === "TRUE") {
+  var currentUrl = window.location.href;
+  if(currentUrl.includes("yachie-lab.org")){
+    window.location.href = 'https://yachielab.github.io';
+  }
+} else {
+  var currentUrl = window.location.href;
+  if(currentUrl.includes("https://yachielab.github.io")){
+    currentUrl = currentUrl.replace("https://yachielab.github.io", 'https://yachie-lab.org') 
+    window.location.href = currentUrl;
+  }
+}
+
 if (params.has('affil') === true) {
   if(params.get('affil') === "UBC"){
     var AFFILS = ["All", "UBC"];
