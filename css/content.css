@@ -49,7 +49,7 @@ section .content_img_div img{
 }
 
 .content.sns-post {
-  width: clamp(340px, 40%, 540px); 
+  width: clamp(340px, 45%, 540px); 
   margin-right: 5%;
   min-height: 150px;
 }
