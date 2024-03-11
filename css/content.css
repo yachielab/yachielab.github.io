@@ -49,7 +49,17 @@ section .content_img_div img{
 }
 
 .sns-post {
+  width: clamp(340px, 40%, 540px); 
+  margin-right: 5%;
   min-height: 150px;
+}
+
+@media screen and (max-width: 1049px){
+  .sns-post {
+    width: clamp(340px, 80%, 540px); 
+    margin-right: 5%;
+    min-height: 150px;
+  }
 }
 
 @media screen and (max-width: 600px){
