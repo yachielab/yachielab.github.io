@@ -48,14 +48,14 @@ section .content_img_div img{
   margin-bottom: 0px;
 }
 
-.sns-post {
+.content.sns-post {
   width: clamp(340px, 40%, 540px); 
   margin-right: 5%;
   min-height: 150px;
 }
 
 @media screen and (max-width: 1049px){
-  .sns-post {
+  .content.sns-post {
     width: clamp(340px, 80%, 540px); 
     margin-right: 5%;
     min-height: 150px;
