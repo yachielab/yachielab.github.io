@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Redirecting...</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var path = window.location.pathname;
+            if (path.include('.php')) {
+                window.location.href = 'https://yachie-lab.org';
+            }
+        });
+    </script>
+</head>
+<body>
+    <p>404 NOT FOUND</p>
+</body>
+</html>
