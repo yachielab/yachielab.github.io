@@ -29,19 +29,6 @@ JA.style.marginRight = "1px";
 JA.style.borderRight = "0px solid #FFFFFF"; 
 var LANG   = "EN";
 
-if (params.has('develop') === true && params.get('develop') === "TRUE") {
-  var currentUrl = window.location.href;
-  if(currentUrl.includes("yachie-lab.org")){
-    window.location.href = 'https://yachielab.github.io';
-  }
-} else {
-  var currentUrl = window.location.href;
-  if(currentUrl.includes("https://yachielab.github.io")){
-    currentUrl = currentUrl.replace("https://yachielab.github.io", 'https://yachie-lab.org') 
-    window.location.href = currentUrl;
-  }
-}
-
 if (params.has('affil') === true) {
   if(params.get('affil') === "UBC"){
     var AFFILS = ["All", "UBC"];
@@ -432,21 +419,21 @@ EN.addEventListener('click', setEN);
 JA.addEventListener('click', setJA);
 ZH.addEventListener('click', setZH);
 
-pplV_EN.addEventListener('click', add_param(pplV_EN, "UBC"));
-pplV_JA.addEventListener('click', add_param(pplV_JA, "UBC"));
-pplV_ZH.addEventListener('click', add_param(pplV_ZH, "UBC"));
+pplV_EN.addEventListener('click', () => add_param(pplV_EN, "UBC"));
+pplV_JA.addEventListener('click', () => add_param(pplV_JA, "UBC"));
+pplV_ZH.addEventListener('click', () => add_param(pplV_ZH, "UBC"));
 
-pplO_EN.addEventListener('click', add_param(pplO_EN, "Osaka"));
-pplO_JA.addEventListener('click', add_param(pplO_JA, "Osaka"));
-pplO_ZH.addEventListener('click', add_param(pplO_ZH, "Osaka"));
+pplO_EN.addEventListener('click', () => add_param(pplO_EN, "Osaka"));
+pplO_JA.addEventListener('click', () => add_param(pplO_JA, "Osaka"));
+pplO_ZH.addEventListener('click', () => add_param(pplO_ZH, "Osaka"));
 
-mpplV_EN.addEventListener('click', add_param(mpplV_EN, "UBC"));
-mpplV_JA.addEventListener('click', add_param(mpplV_JA, "UBC"));
-mpplV_ZH.addEventListener('click', add_param(mpplV_ZH, "UBC"));
+mpplV_EN.addEventListener('click', () => add_param(mpplV_EN, "UBC"));
+mpplV_JA.addEventListener('click', () => add_param(mpplV_JA, "UBC"));
+mpplV_ZH.addEventListener('click', () => add_param(mpplV_ZH, "UBC"));
 
-mpplO_EN.addEventListener('click', add_param(mpplO_EN, "Osaka"));
-mpplO_JA.addEventListener('click', add_param(mpplO_JA, "Osaka"));
-mpplO_ZH.addEventListener('click', add_param(mpplO_ZH, "Osaka"));
+mpplO_EN.addEventListener('click', () => add_param(mpplO_EN, "Osaka"));
+mpplO_JA.addEventListener('click', () => add_param(mpplO_JA, "Osaka"));
+mpplO_ZH.addEventListener('click', () => add_param(mpplO_ZH, "Osaka"));
 
 window.addEventListener('scroll', checkLangPosition);
 window.addEventListener('resize', checkLangPosition);
@@ -507,15 +494,4 @@ if (vw > 700){
  aside.style.display = "flex";
 }
 
-if (params.has('develop') === true && params.get('develop') === "TRUE") {
-  const links = document.querySelectorAll('a');
-  links.forEach(link => {
-    var href = link.getAttribute('href'); 
-    if (link.getAttribute('href') === null){
-      null;
-    }else if (link.getAttribute('href').startsWith("http") === false){
-      href = href + "&develop=TRUE"
-      link.setAttribute("href", href);
-    }
-  });
-}
+
