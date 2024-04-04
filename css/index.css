@@ -325,13 +325,13 @@ footer{
 
   @keyframes changeImage {
     0% {
-      background-image: url('../img_new/FF_1_cropped.png');
+      background-image: url('../img/FF_1_cropped.png');
     }
     50% {
-      background-image: url('../img_new/FF_2_cropped.png');
+      background-image: url('../img/FF_2_cropped.png');
     }
     100% {
-      background-image: url('../img_new/FF_1_cropped.png');
+      background-image: url('../img/FF_1_cropped.png');
     }
   }
 

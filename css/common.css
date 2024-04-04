@@ -34,7 +34,7 @@ body a:hover {
 
 #container{
   position:relative;
-  background-image: url("../img_new/All_member_cropped.png");
+  background-image: url("../img/All_member_cropped.png");
   background-size: 100% auto;
   background-repeat: no-repeat;
   background-position: top 0 right 50%;
@@ -320,7 +320,7 @@ footer {
   width: 100%;
   display: flex;
   justify-content: center;
-  background-image: url("../img_new/All_member_cropped2.png");
+  background-image: url("../img/All_member_cropped2.png");
   background-size: 100% auto;
   background-repeat: no-repeat;
   background-position: bottom 0 right 50%;
