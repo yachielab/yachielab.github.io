@@ -18,7 +18,7 @@ const enElements = document.getElementsByClassName('English');
 const jaElements = document.getElementsByClassName('Japanese');
 const zhElements = document.getElementsByClassName('Chinese');
 const params     = new URLSearchParams(window.location.search);
-const breakpoint = window.matchMedia("(max-width:700px)");
+const breakpoint = window.matchMedia("(max-width:600px)");
 
 var ubcElements   = null;
 var primeElements = null; 
@@ -68,19 +68,35 @@ var originalHeight = langElement.style.height;
 let ENisReplaced = false;
 let JAisReplaced = false;
 let ZHisReplaced = false;
+
 var original_enElements = [];
 for (var i = 0; i < enElements.length; i++) {
-  original_enElements.push(enElements[i].style.display);
+  var ostyle = window.getComputedStyle(enElements[i]).display;
+  if(ostyle === "none"){
+    original_enElements.push("block");
+  }else{
+    original_enElements.push(ostyle);
+  }
 }
 
 var original_jaElements = [];
 for (var i = 0; i < jaElements.length; i++) {
-  original_jaElements.push(jaElements[i].style.display);
+  var ostyle = window.getComputedStyle(jaElements[i]).display;
+  if(ostyle === "none"){
+    original_jaElements.push("block");
+  }else{
+    original_jaElements.push(ostyle);
+  }
 }
 
 var original_zhElements = [];
 for (var i = 0; i < zhElements.length; i++) {
-  original_zhElements.push(zhElements[i].style.display);
+  var ostyle = window.getComputedStyle(zhElements[i]).display;
+  if(ostyle === "none"){
+    original_zhElements.push("block");
+  }else{
+    original_zhElements.push(ostyle);
+  }
 }
 
 function intersection(first, second){
@@ -137,7 +153,7 @@ function setEN(){
   } else {
     null;
   }
-  if (vw > 700){
+  if (vw > 600){
     aside.style.display = "flex";
   }
   ubcElements   = Array.from(document.getElementsByClassName('UBC English')).concat(Array.from(document.getElementsByClassName('UBC Common')));
@@ -172,7 +188,7 @@ function setJA(){
   } else {
     null; 
   }
-  if (vw > 700){
+  if (vw > 600){
     aside.style.display = "flex";
   }
   ubcElements   = Array.from(document.getElementsByClassName('UBC Japanese')).concat(Array.from(document.getElementsByClassName('UBC Common')));
@@ -207,11 +223,11 @@ function setZH(){
   } else {
     null; 
   }
-  if (vw > 700){
+  if (vw > 600){
     aside.style.display = "flex";
   }
   ubcElements   = Array.from(document.getElementsByClassName('UBC Chinese')).concat(Array.from(document.getElementsByClassName('UBC Common')));
-  primeElements = Array.from(document.getElementsByClassName('Osaka Chinse')).concat(Array.from(document.getElementsByClassName('Osaka Common'))); 
+  primeElements = Array.from(document.getElementsByClassName('Osaka Chinese')).concat(Array.from(document.getElementsByClassName('Osaka Common'))); 
 }
 
 function setUBC(){
@@ -250,6 +266,7 @@ function checkLangPosition() {
     }
 
   var element = document.getElementById("languages");
+  mainRect = main.getBoundingClientRect();
   if (mainRect.top < header.clientHeight*(1-5/15)){
     element.style.position = 'fixed';
     element.style.top = "0";
@@ -299,7 +316,7 @@ function scrollImg() {
   mainRect   = main.getBoundingClientRect();
   if(mainRect.top > 0){
     var scrlh = 2.0 * (header.clientHeight - mainRect.top);
-    container.style.backgroundPosition = `top calc(calc(-1.211 * min(0.25 * 1920px, 25vw)) - ${scrlh}px) right 50%`;
+    container.style.backgroundPosition = `top calc(calc(-1 * ${scrlh}px)) right 50%`;
   };
 
   if(-1*mainRect.top + vh > main.clientHeight){
@@ -405,7 +422,7 @@ function isSafari() {
 function add_param(element, affil){
   var link = element.querySelector('a');
   var href = link.getAttribute('href'); 
-  //console.log(href);
+  console.log(href);
   if (href.includes("?lang=")){
     href = href.replace(/\.html\?lang=[A-Z]{2}/,".html?lang=" + LANG + `&affil=${affil}`)
     link.setAttribute("href", href);
@@ -447,7 +464,7 @@ if (isSafari()) {
 window.addEventListener('scroll', checkLogoPosition);
 window.addEventListener('resize', checkLogoPosition);
 
-if (vw > 700){
+if (vw > 600){
   window.addEventListener('scroll', scrollImg);
 } 
 
@@ -459,39 +476,38 @@ breakpoint.addEventListener("change", () => {
   window.location.reload();
 });
 
-if (params.has('lang') === true) {
-  const lang = params.get('lang');
-  if(lang === "EN"){
+if(vw > 600){
+  if (params.has('lang') === true) {
+    const lang = params.get('lang');
+    if(lang === "EN"){
+      setEN();
+    } else if(lang === "JA"){
+      setJA();
+    } else if(lang === "ZH"){
+      setZH();
+    }
+  } else {
     setEN();
-  } else if(lang === "JA"){
-    setJA();
-  } else if(lang === "ZH"){
-    setZH();
   }
-} else {
-  setEN();
-}
 
-var original_ubcElements = [];
-for (var i = 0; i < ubcElements.length; i++) {
-  original_ubcElements.push(ubcElements[i].style.display);
-}
-var original_primeElements = [];
-for (var i = 0; i < primeElements.length; i++) {
-  original_primeElements.push(primeElements[i].style.display);
-}
+  var original_ubcElements = [];
+  for (var i = 0; i < ubcElements.length; i++) {
+    original_ubcElements.push(ubcElements[i].style.display);
+  }
+  var original_primeElements = [];
+  for (var i = 0; i < primeElements.length; i++) {
+    original_primeElements.push(primeElements[i].style.display);
+  }
 
-if (params.has('affil') === true) {
-  const affil = params.get('affil');
-  if(affil === "UBC"){
-    setUBC();
-  }else if(affil === "Osaka"){
-    setOsaka();
+  if (params.has('affil') === true) {
+    const affil = params.get('affil');
+    if(affil === "UBC"){
+      setUBC();
+    }else if(affil === "Osaka"){
+      setOsaka();
+    }
   }
 }
-
-if (vw > 700){
+if (vw > 600){
  aside.style.display = "flex";
 }
-
-

@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="./css/publications.css">
     <link rel="stylesheet" href="./css/chinese.css">
     <link rel="stylesheet" href="./css/instagram.min.css">
-    <link rel="icon" href="./img/favicon.ico">  
+    <link rel="icon" href="./img/favicon.ico">
     <script src="./js/common.js" defer=""></script>
     <script src="./js/mobile_menu.js" defer=""></script>
   </head>
@@ -22,16 +22,16 @@
   <body>
     <div id="container">
     <!-- Header -->
-    <header id="mobile_header">
-      <a href="index.html"><img src="./img/blue_yachielablogo.svg" alt="Yachielab logo"></a>
-      <div id="menu-icon">
-        <div class="menu-icon__bar"></div>
-        <div class="menu-icon__bar"></div>
-        <div class="menu-icon__bar"></div>
-      </div>
-    </header>
+  <header id="mobile_header">
+    <a href="index.html"><img src="./img/blue_yachielablogo.svg" alt="Yachielab logo"></a>
+    <div id="menu-icon" onclick="this.classList.toggle('open')">
+      <div class="bar1"></div>
+      <div class="bar2"></div>
+      <div class="bar3"></div>
+    </div>
+  </header>
 
-    <header id="normal_header"><div class="All Common" style="display: flex; flex-direction: column; justify-content: flex-start;" id="head">
+  <header id="normal_header"><div class="All Common" style="display: flex; flex-direction: column; justify-content: flex-start;" id="head">
 <div class="All Common" style="display: flex; flex-direction: row; justify-content: flex-start;justify-content: flex-between; width: 100%;" id="head-title">
 <h1 class="page_title All Common" id="head-title-h1">Yachie Laboratory at UBC and Osaka University</h1><div class="All Common" style="display: flex; flex-direction: row; justify-content: flex-start;" id="top-menu">
 <section class="content All Common" id="">
@@ -56,7 +56,7 @@
 <a href="./index.html"><img src="./img/white_yachielablogo.svg" alt="content_img" style="" class="content_img"></a>
 </section>
 <section class="content All Common" id="backlogo" style="width: 75%; margin-top:0; position: absolute; z-index: 1;">
-<a href="./index.html"><img src="./img/blue_yachielablogo.svg" alt="content_img" style="" class="content_img"></a>
+<a href="./index.html"><img src="./img/teal_yachielablogo.svg" alt="content_img" style="" class="content_img"></a>
 </section>
 <div class="All Common" style="display: flex; flex-direction: row; justify-content: flex-start;font-family: raleway; justify-content: flex-end; width: 25%;" id="languages">
 <section class="content All Common" id="EN">
@@ -216,26 +216,34 @@
 </section>
      
       <section id="mobile-menu"><div class="All Common" style="display: flex; flex-direction: column; justify-content: flex-start;width: 100%; margin-bottom: 5vw; margin-top: 5vw;" id="mobile-menu-content">
-<div class="All Common" style="display: flex; flex-direction: row; justify-content: flex-start;width: 100%; margin-left: 5vw; margin-bottom: 5vw; " id="mobile-lablogo">
+<div class="All Common" style="display: flex; flex-direction: row; justify-content: flex-start;width: 100%; margin-left: 5vw; margin-bottom: 5vw;" id="mobile-logo">
+<section class="content All Common" id="mobile-yachielablogo" style="margin-top: 0; margin-bottom: 0; margin-right:8vw;">
+<a href="https://yachie-lab.org/"><img src="./img/white_yachielablogo.svg" alt="content_img" style="" class="content_img"></a>
+</section>
+</div>
+<div class="All Common" style="display: flex; flex-direction: row; justify-content: flex-start;width: 100%; margin-left: 5vw; margin-bottom: 5vw; " id="mobile-affillogo">
 <section class="content All Common" id="mobile-ubclogo" style="margin-top: 0; margin-bottom: 0; margin-right:8vw;">
-<a href="https://www.ubc.ca/"><img src="./img/navy_ubclogo_h.svg" alt="content_img" style="height: clamp(calc(10px * 44 / 32), calc(7vw * 44 / 32), 44px);margin-top: 0; margin-right: 0; margin-left: 0; margin-bottom: 0; float: left;" class="content_img"></a>
+<a href="https://www.ubc.ca/"><img src="./img/white_ubclogo_h.svg" alt="content_img" style="height: clamp(calc(10px * 44 / 32), calc(7vw * 44 / 32), 44px);margin-top: 0; margin-right: 0; margin-left: 0; margin-bottom: 0; float: left;" class="content_img"></a>
 </section>
 <section class="content All Common" id="mobile-primelogo" style="margin-top: 0; margin-bottom: 0; margin-right:5vw;">
-<a href="https://prime.osaka-u.ac.jp/"><img src="./img/navy_primelogo_h.svg" alt="content_img" style="height: clamp(calc(10px * 44 / 32), calc(7vw * 44 / 32), 44px);margin-top: 0; margin-right: 0; margin-left: 0; margin-bottom: 0; float: left;" class="content_img"></a>
+<a href="https://prime.osaka-u.ac.jp/"><img src="./img/white_primelogo_h.svg" alt="content_img" style="height: clamp(calc(10px * 44 / 32), calc(7vw * 44 / 32), 44px);margin-top: 0; margin-right: 0; margin-left: 0; margin-bottom: 0; float: left;" class="content_img"></a>
 </section>
 </div>
 <div class="All Common" style="display: flex; flex-direction: row; justify-content: flex-start;width: 100%; margin-left:5vw; align-items: center;" id="mobile-snslogo">
 <section class="content All Common" id="mobile-xlogo" style="margin-right: 5vw; margin-bottom: 0; width: auto;">
-<a href="https://twitter.com/yachielab"><img src="./img/navy_x.svg" alt="content_img" style="width: clamp(calc(10px * 30 / 32), calc(7vw * 30 / 32), 30px);margin-top: 0; margin-right: 0; margin-left: 0; margin-bottom: 0; float: left;" class="content_img"></a>
+<a href="https://twitter.com/yachielab"><img src="./img/white_x.svg" alt="content_img" style="width: clamp(calc(10px * 30 / 32), calc(7vw * 30 / 32), 30px);margin-top: 0; margin-right: 0; margin-left: 0; margin-bottom: 0; float: left;" class="content_img"></a>
 </section>
 <section class="content All Common" id="mobile-instalogo" style="margin-right: 5vw; margin-bottom: 0; width: auto;">
-<a href="https://www.instagram.com/yachielab/"><img src="./img/navy_instagram.svg" alt="content_img" style="width: clamp(10px, 7vw, 32px);margin-top: 0; margin-right: 0; margin-left: 0; margin-bottom: 0; float: left;" class="content_img"></a>
+<a href="https://www.instagram.com/yachielab/"><img src="./img/white_instagram.svg" alt="content_img" style="width: clamp(10px, 7vw, 32px);margin-top: 0; margin-right: 0; margin-left: 0; margin-bottom: 0; float: left;" class="content_img"></a>
 </section>
 <section class="content All Common" id="mobile-githublogo" style="margin-right: 5vw; margin-bottom: 0; width: auto;">
-<a href="https://github.com/yachielab"><img src="./img/navy_github.svg" alt="content_img" style="width: clamp(calc(10px * 35 / 32), calc(7vw * 35 / 32), 35px);margin-top: 0; margin-right: 0; margin-left: 0; margin-bottom: 0; float: left;" class="content_img"></a>
+<a href="https://github.com/yachielab"><img src="./img/white_github.svg" alt="content_img" style="width: clamp(calc(10px * 35 / 32), calc(7vw * 35 / 32), 35px);margin-top: 0; margin-right: 0; margin-left: 0; margin-bottom: 0; float: left;" class="content_img"></a>
 </section>
 <section class="content All Common" id="mobile-addgennelogo" style="margin-right: 5vw; margin-bottom: 0; width: auto;">
-<a href="http://www.addgene.org/Nozomu_Yachie/"><img src="./img/navy_addgene.svg" alt="content_img" style="width: clamp(calc(10px * 45 / 32), calc(7vw * 45 / 32), 45px);margin-top: 0; margin-right: 0; margin-left: 0; margin-bottom: 0; float: left;" class="content_img"></a>
+<a href="http://www.addgene.org/Nozomu_Yachie/"><img src="./img/white_addgene.svg" alt="content_img" style="width: clamp(calc(10px * 45 / 32), calc(7vw * 45 / 32), 45px);margin-top: 0; margin-right: 0; margin-left: 0; margin-bottom: 0; float: left;" class="content_img"></a>
+</section>
+<section class="content All Common" id="mobile-addgennelogo" style="margin-right: 5vw; margin-bottom: 0; width: auto;">
+<a href="https://lit.link/kkuurroo"><img src="./img/sign_white.svg" alt="content_img" style="width: clamp(calc(10px * 84 / 32), calc(2.2vw * 84 / 32), calc(2.1 * 52.8px));margin-top: 0; margin-right: 0; margin-left: 0; margin-bottom: 0; float: left;" class="content_img"></a>
 </section>
 </div>
 <div class="All Common" style="display: flex; flex-direction: row; justify-content: flex-start;width: 100%;" id="mobile-links-lang">
@@ -409,10 +417,14 @@ Suita, Osaka, Japan 565-0871</p>
 <section class="content All Common" id="foot-addgennelogo">
 <a href="http://www.addgene.org/Nozomu_Yachie/"><img src="./img/white_addgene.svg" alt="content_img" style="width: clamp(calc(10px * 45 / 32), calc(2.2vw * 45 / 32), 59.4px);margin-top: 0; margin-right: 0; margin-left: 0; margin-bottom: 0; float: right;" class="content_img"></a>
 </section>
+<section class="content All Common" id="foot-kurosign">
+<a href="https://lit.link/kkuurroo"><img src="./img/sign_white.svg" alt="content_img" style="width: clamp(calc(10px * 38 / 32), calc(2.2vw * 38 / 32), 50.16px);;margin-top: 0; margin-right: 0; margin-left: 0; margin-bottom: 0; float: right;" class="content_img"></a>
+</section>
 </div>
 </div>
 </div>
 </footer>
 </div>
+
 
 </body></html>
