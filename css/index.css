@@ -20,7 +20,7 @@ main {
 
 main #main_menu section{
   position: absolute; 
-  z-index: 23;
+  z-index: 19;
   display: flex;
   flex-direction: column; 
   align-items:center;
@@ -232,7 +232,7 @@ main #main_menu p{
 
 #normal_header{
   position: relative;
-  z-index: 24;
+  z-index: 20;
   background: #00000000;
 }
 
@@ -252,7 +252,7 @@ aside #sidebar {
 
 footer{
   position: relative;
-  z-index: 22;
+  z-index: 18;
   background-image:url("");
 }
 

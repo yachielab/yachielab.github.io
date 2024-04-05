@@ -460,16 +460,20 @@ function replaceBg(bgid){
     url = url.replace(bg_dict[bgid][0] + ".png", bg_dict[bgid][1] + ".png")
     element.src = url;
     element.style.animationPlayState = 'paused';
-    bg_dict[bgid][2].style.zIndex = 27;
-    element.style.zIndex = 25;
-    footer.style.zIndex = 26;
+    for (const key in bg_dict) {
+      bg_dict[key][2].style.zIndex = 23;
+    }
+    element.style.zIndex = 21;
+    footer.style.zIndex = 22;
   } else if (url.includes(bg_dict[bgid][1] + ".png")){
     url = url.replace(bg_dict[bgid][1] + ".png", bg_dict[bgid][0] + ".png")
     element.src = url;
     element.style.zIndex = 0;
     element.style.animationPlayState = 'running';
-    bg_dict[bgid][2].style.zIndex = 23;
-    footer.style.zIndex = 22;
+    for (const key in bg_dict) {
+      bg_dict[key][2].style.zIndex = 19;
+    }
+    footer.style.zIndex = 18;
   }
 }
 
