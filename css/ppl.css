@@ -37,6 +37,10 @@ section .member{
   margin-top: clamp(1.5px, 0.6vw, calc(12px * 0.96));
   margin-bottom: clamp(4.5px, 1.8vw, calc(36px * 0.96));
 } 
+ 
+#ppl_set1 .member:last-child{
+  margin-left: clamp(9.0px, 3.6vw, calc(72px * 0.96));
+}
 
 .personal_photo{
   position: relative;
