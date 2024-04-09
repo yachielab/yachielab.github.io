@@ -145,15 +145,15 @@ main #main_menu p{
   width: clamp(18px, 4.5vw, 90px);
 }
 @keyframes scaleInOut1 {
-  0%, 100% {transform: scale(0.982);} 50% {transform: scale(1.018);}
+  0%, 100% {transform: scale(1.0);} 50% {transform: scale(1.04);}
 }
 
 @keyframes scaleInOut2 {
-  0%, 100% {transform: scale(0.99);} 50% {transform: scale(1.01);}
+  0%, 100% {transform: scale(1.0);} 50% {transform: scale(1.02);}
 }
 
 @keyframes scaleInOut3 {
-  0%, 100% {transform: scale(0.995);} 50% {transform: scale(1.005);}
+  0%, 100% {transform: scale(1.0);} 50% {transform: scale(1.01);}
 }
 
 @keyframes moveUpDown{
@@ -166,10 +166,12 @@ main #main_menu p{
 
 #main_joinus_img{
   animation: scaleInOut1 3s infinite alternate ease-in-out;
+  animation-delay: 1.0s;
 }
 
 #main_research_img{
   animation: scaleInOut3 4s infinite alternate ease-in-out;
+  animation-delay: 1.0s;
 }
 
 #main_news_img{
@@ -178,6 +180,7 @@ main #main_menu p{
 
 #main_pplV_img{
   animation: scaleInOut2 4s infinite alternate ease-in-out;
+   animation-delay: 0.5s;
 }
 
 #main_pplO_img{
