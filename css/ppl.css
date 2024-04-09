@@ -186,4 +186,12 @@ section .member{
     font-size: clamp(calc(1.2 * 6pt) , calc(1.2 * 1.0vw) , calc(1.2 * 12pt));
     line-height: 1.5em;
   }
+  
+  #ppl_set1{
+    flex-direction: column !important;
+  }
+  
+  #ppl_set1 .member:last-child {
+    margin-left: 0;
+  }
 }
