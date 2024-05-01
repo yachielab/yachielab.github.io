@@ -39,8 +39,8 @@ const main_resources_EN    = document.getElementById('main_resources_EN');
 const bg_dict = {
                   "main_research_EN": ["H_1r","H_2r", main_research_EN],
                   "main_news_EN": ["M_1r","M_2r", main_news_EN],
-                  "main_pplV_EN": ["J_1r","J_2r", main_pplV_EN],
-                  "main_pplO_EN": ["D_1r","D_2r", main_pplO_EN],
+                  "main_pplV_EN": ["D_1r","D_2r", main_pplV_EN],
+                  "main_pplO_EN": ["J_1r","J_2r", main_pplO_EN],
                   "main_publications_EN": ["F_1r","F_2r", main_publications_EN],
                   "main_joinus_EN": ["L_1r","L_2r", main_joinus_EN],
                   "main_resources_EN": ["N_1r","N_2r", main_resources_EN],

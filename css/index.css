@@ -79,7 +79,7 @@ main #main_menu p{
   width: clamp(16px, 4vw, 80px);
 }
 
-#main_pplV_EN {
+#main_pplO_EN {
   position: absolute;
   top: 0%;
   left: 82%;
@@ -90,7 +90,7 @@ main #main_menu p{
   width: clamp(20px, 5vw, 100px);
 }
 
-#main_pplO_EN {
+#main_pplV_EN {
   position: absolute;
   top: 21%;
   left: 14%;
