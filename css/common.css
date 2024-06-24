@@ -210,7 +210,7 @@ aside {
   width: 18%;
   background: #FFFFFF;
   color: #008080;
-  font-family: raleway;
+  font-family: raleway, roboto;
   z-index:1;
 }
 
@@ -273,7 +273,7 @@ main .posts {
   color:#008080;
   width: 100%;
   font-size: clamp(calc(2.2 * 6pt) , calc(2.2 * 1.0vw) , calc(2.2 * 14.4pt));
-  font-family: raleway;
+  font-family: raleway, roboto;
   font-weight: 800;
   line-height: 1.1;
   margin-top: 0px;
@@ -285,7 +285,7 @@ main .posts {
   color: #CD853F;
   width: 100%;
   font-size: clamp(calc(1.75 * 6pt) , calc(1.75 * 1.0vw) , calc(1.75 * 14.4pt));
-  font-family: raleway;
+  font-family: raleway, roboto;
   font-weight: 800;
   line-height: 1.2;
   margin-top: 0px;
@@ -297,7 +297,7 @@ main .posts {
   color: #968036;
   width: 100%;
   font-size: clamp(calc(1.55 * 6pt) , calc(1.55 * 1.0vw) , calc(1.55 * 14.4pt));
-  font-family: raleway;
+  font-family: raleway, roboto;
   font-weight: 800;
   line-height: 1.2;
   margin-top: 0px;
@@ -494,7 +494,7 @@ footer {
     margin-top: calc(100 * min(80vw, 1400px) / 1400);
     margin-bottom: 4.5vw;  
     margin-left: 5vw; 
-    font-family: raleway;
+    font-family: raleway, roboto;
     color: #0033CC; 
     font-weight: 600;
   }
