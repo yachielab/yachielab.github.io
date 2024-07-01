@@ -93,6 +93,10 @@ section .alumni{
   line-height: 1.4em;
 }
 
+.personal_info .cpos span{
+  font-weight: 500;
+  color: #0077FF;
+}
 
 .personal_info p {
   margin-top: calc(5 * min(80vw, 1400px) / 1400);
