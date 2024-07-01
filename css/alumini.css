@@ -1,0 +1,197 @@
+main .photo{
+  position: relative;
+  width: 45vw;
+}
+
+main .content{
+  display: flex;
+  flex-direction: column;
+}
+
+.posts h2{
+  margin-bottom: clamp(1px, 0.4vw, calc(8px * 0.96));;
+}
+
+.photo img{
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%,0%);
+  width:  40vw;
+  height: auto;
+}
+
+.position{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 56vw;
+  margin-top: clamp(3px, 1.2vw, calc(24px * 0.96));
+  margin-bottom: clamp(1.5px, 0.6vw, calc(12px * 0.96));
+} 
+
+section .alumini{
+  display: inline-flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  width: 100%;
+  margin-top: clamp(1.5px, 0.6vw, calc(12px * 0.96));
+  margin-bottom: clamp(4.5px, 1.8vw, calc(36px * 0.96));
+} 
+ 
+#ppl_set1 .alumini:last-child{
+  margin-left: clamp(9.0px, 3.6vw, calc(72px * 0.96));
+}
+
+.personal_photo{
+  position: relative;
+  width: clamp(80px, 12vw, calc(240px * 0.96)); 
+  height: clamp(80px, 12vw, calc(240px * 0.96)); 
+  margin-right: clamp(3.0px, 1.2vw, calc(24px * 0.96));
+}
+
+/*.personal_photo::before{
+  content: '';
+  position: absolute;
+  width: clamp(100px, 14vw, 180px);  
+  height: clamp(100px, 14vw, 180px); 
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0.5, 0.0, 0.0, 1.0); 
+  z-index: 10;
+}*/
+
+.personal_photo img{
+  width: clamp(80px, 12vw, calc(240px * 0.96)); 
+  height: clamp(80px, 12vw, calc(240px * 0.96));  
+  /*filter: sepia(.45);*/
+  object-fit: cover;
+} 
+
+.personal_photo .noimage{
+  width: clamp(80px, 12vw, calc(240px * 0.96)); 
+  height: clamp(80px, 12vw, calc(240px * 0.96)); 
+  background-color: #BBBBBB;
+}
+
+.personal_info{
+  margin-left: clamp(10px, 1vw, 20px);
+}
+
+.personal_info .name {
+  margin: 0px;
+  font-size: clamp(calc(1.2 * 6pt) , calc(1.2 * 1.0vw) , calc(1.2 * 14.4pt));
+  font-weight: 700;
+  line-height: clamp(calc(1.2 * 6pt) , calc(1.2 * 1.0vw) , calc(1.2 * 14.4pt));
+  color: #555555;
+}
+
+.personal_info .name a{ 
+  color: #0033CC;
+  text-decoration: none;
+} 
+
+.personal_info .name a:hover {
+  text-decoration: underline;
+}
+
+.personal_info .dpos {
+  margin-top: calc(10 * min(80vw, 1400px) / 1400);
+  margin-bottom: 0px;
+  font-size: clamp(calc(1.1 * 6pt) , calc(1.1 * 1.0vw) , calc(1.1 * 14.4pt));
+  font-weight: 600;
+  line-height: clamp(calc(1.3 * 6pt) , calc(1.3 * 1.0vw) , calc(1.3 * 14.4pt));
+  color: #968036;
+}
+
+.personal_info .intro {
+  margin-top: calc(5 * min(80vw, 1400px) / 1400);
+  margin-bottom: calc(5 * min(80vw, 1400px) / 1400);
+  font-size: clamp(calc(1.1 * 6pt) , calc(1.1 * 1.0vw) , calc(1.1 * 14.4pt));
+  font-weight: 300;
+  line-height: 1.5em;
+  color: #303030;
+}
+
+.personal_info .attribute {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-size: clamp(calc(1.1 * 6pt) , calc(1.1 * 1.0vw) , calc(1.1 * 14.4pt));
+  font-weight: 300;
+  line-height: 1.5em;
+  color: #303030;
+}
+
+.personal_info .attribute .key{
+  font-weight: 500;
+  color: #0077FF;
+}
+
+.personal_info .attribute .value a{
+  color: #0033CC;
+  text-decoration: none;
+}
+
+.personal_info .attribute .value a:hover{
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 600px){
+  .posts h2{
+    padding-top: 10px;
+  }
+
+  .personal_photo{
+    position: relative;
+    margin-right: 10px;
+  }
+ 
+  section .alumini {
+    width: 90vw;
+    flex-wrap: nowrap;
+    margin-top: 5px;
+    margin-bottom: 15px;
+  }
+  
+  .personal_info {
+    width: 100%;
+    padding-right: 0px;
+    margin-right: 0px;
+    margin-left: 0px;
+  }
+  
+  .personal_info .dpos {
+    margin-top: 5px;  
+    margin-bottom: 3px;
+    font-weight: 500;
+  }
+  
+  .personal_info .name {
+    font-size: clamp(calc(1.25 * 6pt) , calc(1.25 * 1.0vw) , calc(1.25 * 12pt));
+    line-height: 1.0em;
+  }
+
+  .personal_info .dpos {
+    font-size: clamp(calc(1.2 * 6pt) , calc(1.2 * 1.0vw) , calc(1.2 * 12pt));
+    line-height: 1.2em;
+  }
+
+  .personal_info .intro {
+    font-size: clamp(calc(1.2 * 6pt) , calc(1.2 * 1.0vw) , calc(1.2 * 12pt));
+    line-height: 1.5em;
+  }
+
+  .personal_info .attribute {
+    font-size: clamp(calc(1.2 * 6pt) , calc(1.2 * 1.0vw) , calc(1.2 * 12pt));
+    line-height: 1.5em;
+  }
+  
+  #ppl_set1{
+    flex-direction: column !important;
+  }
+  
+  #ppl_set1 .alumini:last-child {
+    margin-left: 0;
+  }
+}
