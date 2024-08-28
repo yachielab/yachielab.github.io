@@ -29,120 +29,33 @@ main .content{
   margin-bottom: clamp(1.5px, 0.6vw, calc(12px * 0.96));
 } 
 
-section .alumni{
-  display: inline-flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  width: 100%;
-  margin-top: clamp(1.5px, 0.6vw, calc(12px * 0.96));
-  margin-right: clamp(1.5px, 0.6vw, calc(12px * 0.96));
-  margin-bottom: clamp(4.5px, 1.8vw, calc(36px * 0.96));
-} 
- 
-.personal_photo{
-  position: relative;
-  width: clamp(32px, 4.8vw, calc(150px * 0.6144)); 
-  height: clamp(32px, 4.8vw, calc(150px * 0.6144)); 
-  margin-right: 0;
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto; /* 各列の幅を内容に合わせて自動調整 */
+    max-width: 100%;
+    margin-right: clamp(1.5px, 0.6vw, calc(12px * 0.96));
+    margin-bottom: clamp(4.5px, 1.8vw, calc(36px * 0.96));
+    gap: 0;
 }
-
-.personal_photo img{
-  width: clamp(32px, 4.8vw, calc(150px * 0.6144)); 
-  height: clamp(32px, 4.8vw, calc(150px * 0.6144));  
-  /*filter: sepia(.45);*/
-  object-fit: cover;
-} 
-
-.personal_photo .noimage{
-  width: clamp(32px, 4.8vw, calc(150px * 0.6144)); 
-  height: clamp(32px, 4.8vw, calc(150px * 0.6144)); 
-  background-color: #BBBBBB;
+.grid-item {
+    padding-left: 0px;
+    padding-right: clamp(1.5px, 0.6vw, calc(12px * 0.96));;
+    text-align: left;
+    /*border-bottom: 1px solid #ddd;*/
+    display: flex;
+    align-items: baseline;
+    font-size: clamp(calc(1.0 * 6pt) , calc(1.0 * 1.0vw) , calc(1.0 * 14.4pt));
+    height: clamp(calc(1.5 * 6pt) , calc(1.5 * 1.0vw) , calc(1.5 * 14.4pt)); 
+    /*height: 40px; 各行の高さを固定 */
 }
-
-.personal_info{
-  margin-left: clamp(10px, 1vw, 20px);
+.grid-header {
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0.00);
 }
-
-.personal_info .name {
-  margin: 0px;
-  font-size: clamp(calc(1.05 * 6pt) , calc(1.05 * 1.0vw) , calc(1.05 * 14.4pt));
-  font-weight: 700;
-  line-height: clamp(calc(1.05 * 6pt) , calc(1.05 * 1.0vw) , calc(1.05 * 14.4pt));
-  color: #555555;
-}
-
-.personal_info .name a{ 
-  color: #0033CC;
-  text-decoration: none;
-} 
-
-.personal_info .name a:hover {
-  text-decoration: underline;
-}
-
-.personal_info .dpos {
-  margin-top: calc(4 * min(80vw, 1400px) / 1400);
-  margin-bottom: 0px;
-  font-size: clamp(calc(1.05 * 6pt) , calc(1.05 * 1.0vw) , calc(1.05 * 14.4pt));
-  font-weight: 600;
-  line-height: clamp(calc(1.05 * 6pt) , calc(1.05 * 1.0vw) , calc(1.05 * 14.4pt));
-  color: #968036;
-}
-
-.personal_info .date{
-  font-size: clamp(calc(1.05 * 6pt) , calc(1.05 * 1.0vw) , calc(1.05 * 14.4pt));
-  line-height: clamp(calc(1.05 * 6pt) , calc(1.05 * 1.0vw) , calc(1.05 * 14.4pt));
-}
-
-.personal_info .cpos{
-  font-size: clamp(calc(1.05 * 6pt) , calc(1.05 * 1.0vw) , calc(1.05 * 14.4pt));
-  font-weight: 500;
-  color: #555555;
-  line-height: clamp(calc(1.05 * 6pt) , calc(1.05 * 1.0vw) , calc(1.05 * 14.4pt))
-}
-
-.personal_info .cpos span{
-  font-weight: 500;
-  color: #0077FF;
-}
-
-.personal_info p {
-  margin-top: calc(5 * min(80vw, 1400px) / 1400);
-  margin-bottom: 0px;
+.grid-row:nth-child(even) {
+    background-color: rgba(0, 0, 0, 0.00);
 }
 
 @media screen and (max-width: 600px){
-  .posts h2{
-    padding-top: 10px;
-  }
 
-  .personal_photo{
-    position: relative;
-    margin-right: 10px;
-  }
- 
-  section .alumni {
-    width: 90vw;
-    flex-wrap: nowrap;
-    margin-top: 5px;
-    margin-bottom: 15px;
-  }
-  
-  .personal_info {
-    width: 100%;
-    padding-right: 0px;
-    margin-right: 0px;
-    margin-left: 0px;
-  }
-  
-  .personal_info .dpos {
-    margin-top: 5px;  
-    margin-bottom: 3px;
-    font-weight: 500;
-  }
-  
-  .personal_info .name {
-    font-size: clamp(calc(1.25 * 6pt) , calc(1.25 * 1.0vw) , calc(1.25 * 12pt));
-    line-height: 1.0em;
-  }
 }
