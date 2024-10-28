@@ -31,7 +31,7 @@ main .content{
 
 .grid-container {
   display: grid;
-  grid-template-columns: auto auto auto auto auto auto; /* 各列の幅を内容に合わせて自動調整 */
+  grid-template-columns: clamp(calc(3.0 * 6pt) , calc(3.0 * 1.0vw) , calc(3.0 * 14.4pt)) auto auto auto auto auto; /* 各列の幅を内容に合わせて自動調整 */
   width: 100%;
   margin-right: clamp(1.5px, 0.6vw, calc(12px * 0.96));
   margin-bottom: clamp(4.5px, 1.8vw, calc(36px * 0.96));
@@ -61,6 +61,7 @@ main .content{
   padding-left: 0px;
   /*padding-right: clamp(3.0px, 1.2vw, calc(24px * 0.96));*/
   text-align: left;
+  white-space: nowrap;
   /*border-bottom: 1px solid #ddd;*/
   display: flex;
   align-items: center;
