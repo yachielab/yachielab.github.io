@@ -40,7 +40,7 @@ main .content{
 .grid-container {
   display: grid;
   grid-template-columns: auto auto auto auto auto; /* 各列の幅を内容に合わせて自動調整 */
-  max-width: 100%;
+  width: 100%;
   margin-right: clamp(1.5px, 0.6vw, calc(12px * 0.96));
   margin-bottom: clamp(4.5px, 1.8vw, calc(36px * 0.96));
   gap: 0;
@@ -54,7 +54,7 @@ main .content{
   display: flex;
   align-items: baseline;
   font-size: clamp(calc(1.0 * 6pt) , calc(1.0 * 1.0vw) , calc(1.0 * 14.4pt));
-  height: clamp(calc(1.8 * 6pt) , calc(1.8 * 1.0vw) , calc(1.8 * 14.4pt)); 
+  height: clamp(calc(2.4 * 6pt) , calc(2.4 * 1.0vw) , calc(2.4 * 14.4pt)); 
   /*height: 40px; 各行の高さを固定 */
 }
 
