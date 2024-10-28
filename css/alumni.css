@@ -16,14 +16,6 @@ main .content{
   margin-bottom: clamp(1px, 0.4vw, calc(8px * 0.96));;
 }
 
-.photo img{
-  position: absolute;
-  left: 50%;
-  transform: translate(-50%,0%);
-  width:  40vw;
-  height: auto;
-}
-
 .position{
   display: flex;
   flex-direction: row;
@@ -39,23 +31,41 @@ main .content{
 
 .grid-container {
   display: grid;
-  grid-template-columns: auto auto auto auto auto; /* 各列の幅を内容に合わせて自動調整 */
+  grid-template-columns: auto auto auto auto auto auto; /* 各列の幅を内容に合わせて自動調整 */
   width: 100%;
   margin-right: clamp(1.5px, 0.6vw, calc(12px * 0.96));
   margin-bottom: clamp(4.5px, 1.8vw, calc(36px * 0.96));
   gap: 0;
 }
 
+.personal_photo{
+  position: relative;
+  width: clamp(calc(2.2* 6pt) , calc(2.2 * 1.0vw) , calc(2.2 * 14.4pt)); 
+  height: clamp(calc(2.2 * 6pt) , calc(2.2 * 1.0vw) , calc(2.2 * 14.4pt)); 
+}
+
+.personal_photo img{
+  width: clamp(calc(2.2 * 6pt) , calc(2.2 * 1.0vw) , calc(2.2 * 14.4pt)); 
+  height: clamp(calc(2.2 * 6pt) , calc(2.2 * 1.0vw) , calc(2.2 * 14.4pt));  
+  /*filter: sepia(.45);*/
+  object-fit: cover;
+} 
+
+.personal_photo .noimage{
+  width: clamp(calc(2.2 * 6pt) , calc(2.2 * 1.0vw) , calc(2.2 * 14.4pt)); 
+  height: clamp(calc(2.2 * 6pt) , calc(2.2 * 1.0vw) , calc(2.2 * 14.4pt)); 
+  background-color: #BBBBBB;
+}
+
 .grid-item {
   padding-left: 0px;
-  padding-right: clamp(3.0px, 1.2vw, calc(24px * 0.96));;
+  /*padding-right: clamp(3.0px, 1.2vw, calc(24px * 0.96));*/
   text-align: left;
   /*border-bottom: 1px solid #ddd;*/
   display: flex;
-  align-items: baseline;
+  align-items: center;
   font-size: clamp(calc(1.0 * 6pt) , calc(1.0 * 1.0vw) , calc(1.0 * 14.4pt));
   height: clamp(calc(2.4 * 6pt) , calc(2.4 * 1.0vw) , calc(2.4 * 14.4pt)); 
-  /*height: 40px; 各行の高さを固定 */
 }
 
 .grid-header {
