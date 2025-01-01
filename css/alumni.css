@@ -38,25 +38,6 @@ main .content{
   gap: 0;
 }
 
-.personal_photo{
-  position: relative;
-  width: clamp(calc(2.2* 6pt) , calc(2.2 * 1.0vw) , calc(2.2 * 14.4pt)); 
-  height: clamp(calc(2.2 * 6pt) , calc(2.2 * 1.0vw) , calc(2.2 * 14.4pt)); 
-}
-
-.personal_photo img{
-  width: clamp(calc(2.2 * 6pt) , calc(2.2 * 1.0vw) , calc(2.2 * 14.4pt)); 
-  height: clamp(calc(2.2 * 6pt) , calc(2.2 * 1.0vw) , calc(2.2 * 14.4pt));  
-  /*filter: sepia(.45);*/
-  object-fit: cover;
-} 
-
-.personal_photo .noimage{
-  width: clamp(calc(2.2 * 6pt) , calc(2.2 * 1.0vw) , calc(2.2 * 14.4pt)); 
-  height: clamp(calc(2.2 * 6pt) , calc(2.2 * 1.0vw) , calc(2.2 * 14.4pt)); 
-  background-color: #BBBBBB;
-}
-
 .grid-item {
   padding-left: 0px;
   /*padding-right: clamp(3.0px, 1.2vw, calc(24px * 0.96));*/
@@ -66,8 +47,32 @@ main .content{
   display: flex;
   align-items: center;
   font-size: clamp(calc(1.0 * 6pt) , calc(1.0 * 1.0vw) , calc(1.0 * 14.4pt));
-  height: clamp(calc(2.4 * 6pt) , calc(2.4 * 1.0vw) , calc(2.4 * 14.4pt)); 
+  height: clamp(calc(2.5 * 6pt) , calc(2.5 * 1.0vw) , calc(2.5 * 14.4pt)); 
 }
+
+.grid-item.personal_photo{
+  position: relative;
+  align-items: center;
+  width: clamp(calc(2.2* 6pt) , calc(2.2 * 1.0vw) , calc(2.2 * 14.4pt)); 
+  height: clamp(calc(2.2 * 6pt) , calc(2.2 * 1.0vw) , calc(2.2 * 14.4pt)); 
+  margin-top: clamp(calc(0.15 * 6pt) , calc(0.15 * 1.0vw) , calc(0.15 * 14.4pt));
+  margin-bottom: clamp(calc(0.15 * 6pt) , calc(0.15 * 1.0vw) , calc(0.15 * 14.4pt));
+}
+
+.grid-item.personal_photo img{
+  width: clamp(calc(2.2 * 6pt) , calc(2.2 * 1.0vw) , calc(2.2 * 14.4pt)); 
+  height: clamp(calc(2.2 * 6pt) , calc(2.2 * 1.0vw) , calc(2.2 * 14.4pt));  
+  /*filter: sepia(.45);*/
+  object-fit: cover;
+} 
+
+.grid-item.personal_photo .noimage{
+  width: clamp(calc(2.2 * 6pt) , calc(2.2 * 1.0vw) , calc(2.2 * 14.4pt)); 
+  height: clamp(calc(2.2 * 6pt) , calc(2.2 * 1.0vw) , calc(2.2 * 14.4pt)); 
+  background-color: #BBBBBB;
+}
+
+
 
 .grid-header {
   font-weight: bold;
