@@ -1,7 +1,8 @@
 function reloadTwitter(){
   let observer = new IntersectionObserver((entries, observer) => {
         let twitter_detects = [];
-        let insta_detects   = []; 
+        let insta_detects   = [];
+        let bsk_detects     = [];
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 let tw_block = entry.target.querySelector('blockquote.pre-twitter-tweet'); 
@@ -12,7 +13,16 @@ function reloadTwitter(){
                     observer.unobserve(entry.target);
                   }
                 } 
-
+              
+                let bsk_block = entry.target.querySelector('blockquote.pre-bluesky-embed'); 
+                if(bsk_block !== null){
+                  if(bsk_block.classList.contains("bluesky-embed") === false){ 
+                    bsk_block.classList.add("bluesky-embed");
+                    bsk_detects.push(bsk_block);
+                    observer.unobserve(entry.target);
+                  }
+                }
+                
                 let insta_block = entry.target.querySelector('blockquote.pre-instagram-media'); 
                 if(insta_block !== null){ 
                   if(insta_block.classList.contains("instagram-media") === false){ 
@@ -24,6 +34,7 @@ function reloadTwitter(){
                 }
             }
         });
+        
         console.log(insta_detects); 
         if(twitter_detects.length > 0){
           let script = document.body.querySelector('script.twitter');
@@ -43,6 +54,24 @@ function reloadTwitter(){
           }
         }
         
+        if(bsk_detects.length > 0){
+          let script = document.body.querySelector('script.bsk');
+          if(script !== null){
+            script.remove();
+            let newScript   =  document.createElement('script');
+            newScript.classList.add("bsk");
+            newScript.src   = "https://embed.bsky.app/static/embed.js";
+            newScript.async = true; 
+            document.body.appendChild(newScript);
+          } else {
+            let newScript   =  document.createElement('script');
+            newScript.classList.add("bsk"); 
+            newScript.src   = "https://embed.bsky.app/static/embed.js";
+            newScript.async = true; 
+            document.body.appendChild(newScript);
+          }
+        }
+
         if(insta_detects.length > 0){
           let script = document.body.querySelector('script.insta');
           if(script !== null){
