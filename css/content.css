@@ -54,6 +54,10 @@ section .content_img_div img{
   min-height: 150px;
 }
 
+strong{
+  font-weight: 500;
+}
+
 @media screen and (max-width: 1049px){
   .content.sns-post {
     width: clamp(340px, 80%, 540px); 
