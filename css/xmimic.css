@@ -1,0 +1,105 @@
+/* --- Design tokens ---------------------------------------------------- */
+.x-embed {
+--bg: #ffffff;
+--card: #ffffff;
+--text: #0f1419;
+--subtext: #536471;
+--border: #e6e6e6;
+--accent: #1d9bf0; /* link */
+--soft: #f5f8fa;
+/*--shadow: 0 1px 2px rgba(0,0,0,.04), 0 6px 24px rgba(0,0,0,.06); */
+--radius: 16px;
+--radius-sm: 10px;
+--gap: 12px;
+/*--font: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";*/
+font: 20px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+width: clamp(340px, 45%, 540px); 
+margin-top: 10px;
+margin-right: 5%;
+margin-bottom: calc(20 * min(80vw, 1400px) / 1400);
+min-height: 150px;
+}
+/* dark mode disabled (forced light theme) */
+
+
+* { box-sizing: border-box; }
+/* body styles removed for scoping */
+
+
+/* container removed */
+.x-embed .tweet-embed {
+border: 1px solid var(--border);
+border-radius: var(--radius);
+background: var(--card);
+box-shadow: var(--shadow);
+overflow: hidden;
+}
+
+
+/* Header */
+.x-embed .t-header { display: grid; grid-template-columns: auto 1fr; gap: 10px; padding: 14px; align-items: center; }
+.x-embed .avatar{ width: 44px; height: 44px; border-radius: 50%; background: #ddd; display: grid; place-items: center; overflow: hidden; }
+.x-embed .avatar img { width: 100%; height: 100%; object-fit: cover; }
+.x-embed .who{ line-height: 1.15; }
+.x-embed .who .name { font-weight: 700; letter-spacing: .01em; }
+.x-embed .who .handle { color: var(--subtext); }
+
+
+.btn-follow { padding: 6px 10px; border: 1px solid var(--border); border-radius: 999px; background: transparent; color: var(--text); font-weight: 600; font-size: 13px; cursor: pointer; transition: background .15s ease, border-color .15s ease; }
+.btn-follow:hover { background: var(--soft); border-color: #b9c0c7; }
+
+
+.btn-x { width: 28px; height: 28px; border-radius: 50%; display: grid; place-items: center; border: 1px solid var(--border); background: transparent; cursor: pointer; }
+.btn-x svg { width: 14px; height: 14px; }
+
+
+/* Body */
+.x-embed .t-body { padding: 0 14px 6px; }
+.x-embed .t-body p { margin: 0 0 12px; font-size: 20px; line-height:1.25em}
+.x-embed .t-body a { color: var(--accent); text-decoration: none; }
+.x-embed .t-body a:hover { text-decoration: underline; }
+
+
+/* Media grid (images) */
+.x-embed .media-grid { margin: 8px 0 0; border: 1px solid var(--border); border-radius: var(--radius-sm); overflow: hidden; display: grid; gap: 2px; background: var(--border); }
+.x-embed .media-grid .item { position: relative; display: block; overflow: hidden; background: #d9e3ea; }
+.x-embed .media-grid img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+
+/* Layout presets: add class is-1 | is-2 | is-3 | is-4 to .media-grid */
+.x-embed .media-grid.is-1 { grid-template-columns: 1fr; }
+.media-grid.is-1 .item { aspect-ratio: 16 / 9; }
+.x-embed .media-grid.is-2 { grid-template-columns: 1fr 1fr; }
+.media-grid.is-2 .item { aspect-ratio: 16 / 10; }
+
+
+/* Optional 3-image layout (Twitter-like) */
+.x-embed .media-grid.is-3 { grid-template-columns: 2fr 1fr; grid-template-rows: 1fr 1fr; }
+.media-grid.is-3 .item:first-child { grid-row: 1 / 3; }
+.media-grid.is-3 .item { aspect-ratio: 1 / 1; }
+.x-embed .media-grid.is-4 { grid-template-columns: 1fr 1fr; }
+.media-grid.is-4 .item { aspect-ratio: 1 / 1; }
+
+
+/* Meta/footer */
+.x-embed .t-meta { display: flex; align-items: center; gap: 6px; padding: 10px 14px; color: var(--subtext); border-top: 1px solid var(--border); font-size: 15px; }
+.x-embed .t-meta svg { width: 14px; height: 14px; }
+
+
+/* actions removed */
+.reply-cta a { display: inline-block; text-align: center; width: 100%; padding: 10px 12px; border: 1px solid var(--border); border-radius: 999px; color: var(--accent); text-decoration: none; font-weight: 700; background: transparent; }
+.reply-cta a:hover { background: var(--soft); }
+
+
+/* Utilities */
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
+
+@media screen and (max-width: 1049px){
+  .x-embed {
+    width: clamp(340px, 80%, 540px); 
+  }
+}
+
+@media screen and (max-width: 500px){
+  .x-embed .t-body p { margin: 0 0 12px; font-size: 15px; line-height:1.25em}
+}
