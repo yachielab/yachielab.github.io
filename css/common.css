@@ -355,7 +355,7 @@ footer {
 #foot-ubclogo{
   margin-top: 0; 
   margin-bottom: 0; 
-  margin-right:4vw;
+  margin-right:3vw;
 }
 
 #foot-ubclogo img{
@@ -372,14 +372,25 @@ footer {
   height: clamp(calc(12.5px * 42 / 32), calc(2.2vw * 42 / 32), 52.5px);
 }
 
-#foot-yachielablogo{
-  margin-top: 0; 
+#foot-ubclablogo{
+  margin-top: 0.4vw; 
+  margin-bottom: 0; 
+  margin-right:2.8vw;
+  height: 65%;
+}
+  
+#foot-ubclablogo img{
+  height: clamp(calc(12.5px * 35 / 32), calc(2.2vw * 35 / 32), 44px);
+}
+
+#foot-osakalablogo{
+  margin-top: 0.4vw; 
   margin-bottom: 0; 
   height: 65%;
 }
   
-#foot-yachielablogo img{
-  height: clamp(calc(12.5px * 50 / 32), calc(2.2vw * 50 / 32), 62.5px);
+#foot-osakalablogo img{
+  height: clamp(calc(12.5px * 35 / 32), calc(2.2vw * 35 / 32), 44px);
 }
 
 #foot-snslogo{
