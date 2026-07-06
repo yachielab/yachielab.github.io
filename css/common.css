@@ -164,7 +164,7 @@ body a:hover {
 }
 
 #frontlogo img{
-  width: clamp(35px, 14vw, calc(280px * 0.96));
+  width: clamp(calc(0.725 * 35px), calc(0.725 * calc(25vw - clamp(5px, 2vw, calc(40px * 0.96)))), calc(0.725 * 400px));
   object-fit: cover; 
   object-position: top; 
   margin-top: clamp(2.5px, 1vw, calc(20px * 0.96));
@@ -184,7 +184,7 @@ body a:hover {
 }
 
 #backlogo img{
-  width: clamp(35px, 14vw, calc(280px * 0.96));
+  width: clamp(calc(0.725 * 35px), calc(0.725 * calc(25vw - clamp(5px, 2vw, calc(40px * 0.96)))), calc(0.725 * 400px));
   object-fit: cover; 
   object-position: top; 
   margin-top: clamp(2.5px, 1vw, calc(20px * 0.96));
@@ -205,7 +205,7 @@ body a:hover {
 }
 
 #frontlogo2 img{
-  width: clamp(35px, 14vw, calc(280px * 0.96));
+  width: clamp(35px, calc(25vw - clamp(5px, 2vw, calc(40px * 0.96))), 400px);
   object-fit: cover; 
   object-position: top; 
   margin-top: clamp(2.5px, 1vw, calc(20px * 0.96));
@@ -225,7 +225,7 @@ body a:hover {
 }
 
 #backlogo2 img{
-  width: clamp(35px, 14vw, calc(280px * 0.96));
+  width: clamp(35px, calc(25vw - clamp(5px, 2vw, calc(40px * 0.96))), 400px);
   object-fit: cover; 
   object-position: top; 
   margin-top: clamp(2.5px, 1vw, calc(20px * 0.96));
@@ -247,7 +247,7 @@ aside {
   top: 0;  
   left: 0;
   /*left: max(10vw, calc((100vw - 1400px) / 2));*/
-  width: 18%;
+  width: 100%;
   background: #FFFFFF;
   color: #008080;
   font-family: raleway, roboto;
@@ -291,8 +291,8 @@ main {
 }
 
 main .posts {
-  padding-left: 21%;
-  padding-right: 7%;
+  padding-left: 25%;
+  padding-right: clamp(5px, 2vw, calc(40px * 0.96));
   padding-bottom: clamp(5px, 8vw, calc(160px * 0.96));
   width: 100%;
   overflow-x: hidden;
@@ -413,7 +413,7 @@ footer {
 }
 
 #foot-ubclablogo{
-  margin-top: 0.4vw; 
+  margin-top: 0.0vw; 
   margin-bottom: 0; 
   margin-right:2.8vw;
   height: 65%;
@@ -424,7 +424,7 @@ footer {
 }
 
 #foot-osakalablogo{
-  margin-top: 0.4vw; 
+  margin-top: 0.0vw; 
   margin-bottom: 0; 
   height: 65%;
 }
