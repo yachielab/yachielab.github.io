@@ -92,8 +92,6 @@ var header  = document.getElementById("normal_header");
 var main    = document.querySelector('.posts');
 var footer  = document.querySelector('footer'); 
 var langElement  = document.getElementById("languages");
-var frontElement = document.querySelector("#frontlogo img");
-var backElement  = document.querySelector("#backlogo img");
 frontElement.style.objectPosition = "top";
 
 var mainRect   = main.getBoundingClientRect();
