@@ -38,7 +38,7 @@ if (params.has('affil') === true) {
     var AFFILS = ["All", "UBC", "Osaka"];
   }
 }else{
-  var AFFILS = ["All", "UBC"];
+  var AFFILS = ["All", "UBC", "Osaka"];
 }
 
 let lastScroll = 0;
