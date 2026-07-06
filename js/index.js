@@ -574,14 +574,12 @@ for (var i = 0; i < primeElements.length; i++) {
   original_primeElements.push(primeElements[i].style.display);
 }
 
-if (params.has('affil') === true) {
-  const affil = params.get('affil');
-  if(affil === "UBC"){
-    setUBC();
-  }else if(affil === "Osaka"){
-    setOsaka();
-  }
+if (affil === "Osaka") {
+  setOsaka();
+} else {
+  setUBC();
 }
+
 
 if (vw > 700){
  aside.style.display = "flex";
