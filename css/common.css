@@ -196,10 +196,50 @@ body a:hover {
   left: 0;
 }
 
+#frontlogo2 {
+  width: 100%; 
+  height: 56%; 
+  margin-top:0; 
+  z-index: 2;
+  /*background: radial-gradient(farthest-corner at 30% 135%, #0077f7, #0055E3 65%);*/
+}
+
+#frontlogo2 img{
+  width: clamp(35px, 14vw, calc(280px * 0.96));
+  object-fit: cover; 
+  object-position: top; 
+  margin-top: clamp(2.5px, 1vw, calc(20px * 0.96));
+  margin-left: clamp(5px, 2vw, calc(40px * 0.96)); 
+  margin-bottom: 0; 
+  float: none; 
+  position: relative; 
+  top: 0; 
+  left: 0; 
+}
+
+#backlogo2{
+  width: 100%; 
+  margin-top:0; 
+  position: absolute; 
+  z-index: 1;
+}
+
+#backlogo2 img{
+  width: clamp(35px, 14vw, calc(280px * 0.96));
+  object-fit: cover; 
+  object-position: top; 
+  margin-top: clamp(2.5px, 1vw, calc(20px * 0.96));
+  margin-left: clamp(5px, 2vw, calc(40px * 0.96));
+  margin-bottom: 0; 
+  float: none; 
+  position: relative; 
+  top: 0; 
+  left: 0;
+}
+
 #mobile_header {
   display: none;
 }
-
 
 aside {
   display: none;

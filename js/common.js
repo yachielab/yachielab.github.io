@@ -29,17 +29,20 @@ JA.style.marginRight = "1px";
 JA.style.borderRight = "0px solid #FFFFFF"; 
 var LANG   = "EN";
 
-if (params.has('affil') === true) {
-  if(params.get('affil') === "UBC"){
-    var AFFILS = ["All", "UBC"];
-  }else if (params.get('affil') === "Osaka"){
-    var AFFILS = ["All", "Osaka"];
-  } else {
-    var AFFILS = ["All", "UBC", "Osaka"];
-  }
-}else{
-  var AFFILS = ["All", "UBC", "Osaka"];
+
+let frontElement = document.querySelector("#frontlogo img");
+let backElement  = document.querySelector("#backlogo img");
+let AFFILS = ["All", "UBC"];
+const affil = params.get("affil");
+if (affil === "Osaka") {
+  AFFILS = ["All", "Osaka"];
+  frontElement = document.querySelector("#frontlogo2 img");
+  backElement  = document.querySelector("#backlogo2 img");
+} else if (affil === "UBC") {
+  AFFILS = ["All", "UBC"];
 }
+console.log(AFFILS) 
+frontElement.style.objectPosition = "top";
 
 let lastScroll = 0;
 let throttleTime = 2;
@@ -54,9 +57,6 @@ var header  = document.getElementById("normal_header");
 var main    = document.querySelector('.posts');
 var footer  = document.querySelector('footer'); 
 var langElement  = document.getElementById("languages");
-var frontElement = document.querySelector("#frontlogo img");
-var backElement  = document.querySelector("#backlogo img");
-frontElement.style.objectPosition = "top";
 
 var mainRect   = main.getBoundingClientRect();
 var footerRect = footer.getBoundingClientRect();
@@ -126,6 +126,19 @@ function updateLinksForLanguage(lang) {
   });
 }
 
+function setDefaultAffilForJA() {
+  if (!params.has("affil")) {
+    params.set("affil", "Osaka");
+
+    const newUrl = new URL(window.location.href);
+    newUrl.searchParams.set("affil", "Osaka");
+    window.history.replaceState(null, "", newUrl);
+
+    AFFILS = ["All", "Osaka"];
+    location.reload();
+  }
+}
+
 function setEN(){
   LANG = "EN";
   if (ENisReplaced===false) {
@@ -161,6 +174,7 @@ function setEN(){
 }
 
 function setJA(){ 
+  setDefaultAffilForJA();
   LANG = "JA";
   if (JAisReplaced===false) {
     EN.style.fontWeight   = '300';
@@ -498,15 +512,14 @@ if(vw > 600){
   for (var i = 0; i < primeElements.length; i++) {
     original_primeElements.push(primeElements[i].style.display);
   }
-
-  if (params.has('affil') === true) {
-    const affil = params.get('affil');
-    if(affil === "UBC"){
-      setUBC();
-    }else if(affil === "Osaka"){
-      setOsaka();
-    }
+  
+  const affil = params.get("affil");
+  if (affil === "Osaka") {
+    setOsaka();
+  } else {
+    setUBC();
   }
+ 
 }
 if (vw > 600){
  aside.style.display = "flex";
