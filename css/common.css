@@ -205,7 +205,7 @@ body a:hover {
 }
 
 #frontlogo2 img{
-  width: clamp(35px, calc(25vw - clamp(5px, 2vw, calc(40px * 0.96))), 400px);
+  width: clamp(35px, calc(25vw - clamp(5px, 4vw, calc(40px * 0.96))), 400px);
   object-fit: cover; 
   object-position: top; 
   margin-top: clamp(2.5px, 1vw, calc(20px * 0.96));
@@ -225,7 +225,7 @@ body a:hover {
 }
 
 #backlogo2 img{
-  width: clamp(35px, calc(25vw - clamp(5px, 2vw, calc(40px * 0.96))), 400px);
+  width: clamp(35px, calc(25vw - clamp(5px, 4vw, calc(40px * 0.96))), 400px);
   object-fit: cover; 
   object-position: top; 
   margin-top: clamp(2.5px, 1vw, calc(20px * 0.96));

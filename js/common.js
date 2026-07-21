@@ -424,7 +424,7 @@ function checkLogoPosition() {
       } else {
         frontElement.style.height = mainRect.top - flmg < 0 ? 0: mainRect.top - flmg;
       }
-    }, 10);
+    }, 5);
   }
 }
 
