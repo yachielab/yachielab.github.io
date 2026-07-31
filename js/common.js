@@ -387,10 +387,10 @@ function checkLogoPosition() {
       //console.log(frontElement.width, frontElement.height, logoOriginalWidth, logoOriginalHeight);
       //console.log(hogehoge);
       
-      if (mainRect.bottom < 0.15 * mainHeight){
-        sidebar.style.top      = sidebarTopOriginal + (-1.0 * (0.15 * mainHeight - mainRect.bottom));
-        frontElement.style.top = -1.0 * (0.15 * mainHeight - mainRect.bottom);
-        backElement.style.top  = -1.0 * (0.15 * mainHeight - mainRect.bottom);
+      if (mainRect.bottom < Math.min(0.15 * mainHeight, 800)){
+        sidebar.style.top      = sidebarTopOriginal + (-1.0 * (Math.min(0.15 * mainHeight, 800) - mainRect.bottom));
+        frontElement.style.top = -1.0 * (Math.min(0.15 * mainHeight, 800) - mainRect.bottom);
+        backElement.style.top  = -1.0 * (Math.min(0.15 * mainHeight, 800) - mainRect.bottom);
       } else {
         if (logoFlag == 0){
           sidebarTopOriginal = sidebar.getBoundingClientRect().top;
