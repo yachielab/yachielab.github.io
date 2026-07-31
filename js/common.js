@@ -58,12 +58,15 @@ var main    = document.querySelector('.posts');
 var footer  = document.querySelector('footer'); 
 var langElement  = document.getElementById("languages");
 
-var mainRect   = main.getBoundingClientRect();
-var footerRect = footer.getBoundingClientRect();
-var asideRect  = aside.getBoundingClientRect();
+var mainRect    = main.getBoundingClientRect();
+var footerRect  = footer.getBoundingClientRect();
+var asideRect   = aside.getBoundingClientRect();
+var sidebarRect = sidebar.getBoundingClientRect();
+var sidebarTopOriginal = sidebarRect.top;
 
 var originalWidth  = langElement.style.width;
 var originalHeight = langElement.style.height;
+var logoFlag = 0; 
 
 let ENisReplaced = false;
 let JAisReplaced = false;
@@ -352,9 +355,10 @@ function checkLogoPosition() {
     }
     
     vw = window.innerWidth;
-    mainRect  = main.getBoundingClientRect();
-    asideRect = aside.getBoundingClientRect();
-    //console.log(mainRect.top, mainRect.bottom, asideRect.bottom);
+    mainRect    = main.getBoundingClientRect();
+    asideRect   = aside.getBoundingClientRect();
+    sidebarRect = sidebar.getBoundingClientRect();
+    
     var flmg = Math.min(0.0225*vw, 1920 * 0.0225);
     var headMenuHeight = Math.min(0.15*vw, 1920 * 0.15); 
     var bmg = headMenuHeight * (1-0/15) - logoOriginalHeight - flmg;
@@ -382,6 +386,19 @@ function checkLogoPosition() {
       //backElement.style.width   = logoOriginalWidth;
       //console.log(frontElement.width, frontElement.height, logoOriginalWidth, logoOriginalHeight);
       //console.log(hogehoge);
+      
+      if (mainRect.bottom < 0.15 * mainHeight){
+        sidebar.style.top      = sidebarTopOriginal + (-1.0 * (0.15 * mainHeight - mainRect.bottom));
+        frontElement.style.top = -1.0 * (0.15 * mainHeight - mainRect.bottom);
+        backElement.style.top  = -1.0 * (0.15 * mainHeight - mainRect.bottom);
+      } else {
+        if (logoFlag == 0){
+          sidebarTopOriginal = sidebar.getBoundingClientRect().top;
+          logoFlag = 1; 
+        }  
+        console.log("fuga", sidebarTopOriginal, sidebar.getBoundingClientRect().top);
+        sidebar.style.top = sidebarTopOriginal;
+      }
 
       /*if (mainRect.top - flmg < logoOriginalHeight) {
         frontElement.style.height = mainRect.top - flmg;
@@ -416,11 +433,6 @@ function checkLogoPosition() {
     scrollTimeout = setTimeout(function() {
       if (((mainRect.top < header.clientHeight*(1-0/15)) === false) || (((mainRect.top < header.clientHeight*(1-0/15)) === true) && (mainRect.top - flmg < logoOriginalHeight) === false)){
         frontElement.style.height = "auto";
-        aside.style.position = 'absolute';
-        aside.style.left = "0"; 
-        if ((mainRect.top < header.clientHeight*(1-0/15)) === false){
-          aside.style.top = 0;
-        }
       } else {
         frontElement.style.height = mainRect.top - flmg < 0 ? 0: mainRect.top - flmg;
       }
@@ -490,6 +502,7 @@ breakpoint.addEventListener("change", () => {
   window.location.reload();
 });
 
+
 if(vw > 600){
   if (params.has('lang') === true) {
     const lang = params.get('lang');
@@ -519,8 +532,9 @@ if(vw > 600){
   } else {
     setUBC();
   }
- 
 }
+
 if (vw > 600){
  aside.style.display = "flex";
 }
+

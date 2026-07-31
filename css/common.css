@@ -261,7 +261,7 @@ aside {
 
 aside #sidebar {
   float: left;
-  margin-top: clamp(7.5px, 3vw, calc(60px * 0.96)); 
+  padding-top: clamp(7.5px, 3vw, calc(60px * 0.96)); 
   margin-left: clamp(5px, 2vw, calc(40px * 0.96));
   background-color: #FFFFFF00;
   /*height: 400px;*/
