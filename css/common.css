@@ -62,8 +62,8 @@ body a:hover {
 }
 
 #head-title{
-  height: clamp(7.5px, 3vw, 60px);
-  margin-top: clamp(5px, 2vw, 40px);
+  /*height: clamp(7.5px, 3vw, 60px);*/
+  height: 36%;
   margin-bottom: 0vw;
 }
 
@@ -101,6 +101,7 @@ body a:hover {
 #top-menu section{
   font-weight: 700; 
   color: #DA9436; 
+  margin-top: calc(0.15 * clamp(37.5px, 15vw, calc(300px * 0.96)));
   margin-left: clamp(2.5px, 1vw, 20px);
   margin-right: 0.5vw;
   border-right: 1.0px solid #30303000; 
@@ -110,6 +111,10 @@ body a:hover {
   height: 2.0em; 
   line-height: 2.0em;
 } 
+
+#top-menu p {
+  line-height: 1.0em;
+}
 
 #top-menu a {
   color:inherit;
@@ -158,16 +163,16 @@ body a:hover {
 #frontlogo {
   width: 100%; 
   height: 56%; 
-  margin-top:0; 
+  margin-top: 0;
   z-index: 2;
   /*background: radial-gradient(farthest-corner at 30% 135%, #0077f7, #0055E3 65%);*/
 }
 
 #frontlogo img{
-  width: clamp(calc(0.725 * 35px), calc(0.725 * calc(25vw - clamp(5px, 2vw, calc(40px * 0.96)))), calc(0.725 * 400px));
+  width: clamp(35px, calc(25vw - clamp(5px, 4vw, 4vw)), 400px);
   object-fit: cover; 
   object-position: top; 
-  margin-top: clamp(2.5px, 1vw, calc(20px * 0.96));
+  margin-top: calc(0.15 * clamp(37.5px, 15vw, calc(300px * 0.96)));
   margin-left: clamp(5px, 2vw, calc(40px * 0.96)); 
   margin-bottom: 0; 
   float: none; 
@@ -184,10 +189,10 @@ body a:hover {
 }
 
 #backlogo img{
-  width: clamp(calc(0.725 * 35px), calc(0.725 * calc(25vw - clamp(5px, 2vw, calc(40px * 0.96)))), calc(0.725 * 400px));
+  width: clamp(35px, calc(25vw - clamp(5px, 4vw, 4vw)), 400px);
   object-fit: cover; 
   object-position: top; 
-  margin-top: clamp(2.5px, 1vw, calc(20px * 0.96));
+  margin-top: calc(0.15 * clamp(37.5px, 15vw, calc(300px * 0.96)));
   margin-left: clamp(5px, 2vw, calc(40px * 0.96));
   margin-bottom: 0; 
   float: none; 
@@ -205,10 +210,10 @@ body a:hover {
 }
 
 #frontlogo2 img{
-  width: clamp(35px, calc(25vw - clamp(5px, 4vw, calc(40px * 0.96))), 400px);
+  width: clamp(35px, calc(25vw - clamp(5px, 4vw, 4vw)), 400px);
   object-fit: cover; 
   object-position: top; 
-  margin-top: clamp(2.5px, 1vw, calc(20px * 0.96));
+  margin-top: calc(0.15 * clamp(37.5px, 15vw, calc(300px * 0.96)));
   margin-left: clamp(5px, 2vw, calc(40px * 0.96)); 
   margin-bottom: 0; 
   float: none; 
@@ -225,10 +230,10 @@ body a:hover {
 }
 
 #backlogo2 img{
-  width: clamp(35px, calc(25vw - clamp(5px, 4vw, calc(40px * 0.96))), 400px);
+  width: clamp(35px, calc(25vw - clamp(5px, 4vw, 4vw)), 400px);
   object-fit: cover; 
   object-position: top; 
-  margin-top: clamp(2.5px, 1vw, calc(20px * 0.96));
+  margin-top: calc(0.15 * clamp(37.5px, 15vw, calc(300px * 0.96)));
   margin-left: clamp(5px, 2vw, calc(40px * 0.96));
   margin-bottom: 0; 
   float: none; 
@@ -260,7 +265,8 @@ aside #sidebar {
   margin-left: clamp(5px, 2vw, calc(40px * 0.96));
   background-color: #FFFFFF00;
   /*height: 400px;*/
-  position: absolute;
+  /*position: absolute;*/
+  position: fixed;
   z-index: 2;
 }
 
@@ -420,7 +426,7 @@ footer {
 }
   
 #foot-ubclablogo img{
-  height: clamp(calc(12.5px * 35 / 32), calc(2.2vw * 35 / 32), 44px);
+  height: clamp(calc(12.5px * 50 / 32), calc(2.2vw * 50 / 32), 60px);
 }
 
 #foot-osakalablogo{
@@ -430,7 +436,7 @@ footer {
 }
   
 #foot-osakalablogo img{
-  height: clamp(calc(12.5px * 35 / 32), calc(2.2vw * 35 / 32), 44px);
+  height: clamp(calc(12.5px * 50 / 32), calc(2.2vw * 50 / 32), 60px);
 }
 
 #foot-snslogo{

@@ -281,7 +281,7 @@ function checkLangPosition() {
 
   var element = document.getElementById("languages");
   mainRect = main.getBoundingClientRect();
-  if (mainRect.top < header.clientHeight*(1-5/15)){
+  if (mainRect.top < header.clientHeight*(1-36/100)){
     element.style.position = 'fixed';
     element.style.top = "0";
     element.style.right  = "max(0px, calc((100% - 1920px) / 2))";
@@ -311,7 +311,7 @@ function checkLangPosition() {
   }
   
   scrollTimeout2 = setTimeout(function() {
-      if (mainRect.top >= header.clientHeight*(1-5/15)){
+      if (mainRect.top >= header.clientHeight*(1-36/100)){
         element.style.position = 'relative';
         element.style.top = "0";
         element.style.right = "0";
@@ -355,9 +355,9 @@ function checkLogoPosition() {
     mainRect  = main.getBoundingClientRect();
     asideRect = aside.getBoundingClientRect();
     //console.log(mainRect.top, mainRect.bottom, asideRect.bottom);
-    var flmg = Math.min(0.01*vw, 1920 * 0.01);
-    var headMenuHeight = Math.min(0.15*vw, 1920 * 0.15) 
-    var bmg = headMenuHeight * (1-5/15) - logoOriginalHeight - flmg;
+    var flmg = Math.min(0.0225*vw, 1920 * 0.0225);
+    var headMenuHeight = Math.min(0.15*vw, 1920 * 0.15); 
+    var bmg = headMenuHeight * (1-0/15) - logoOriginalHeight - flmg;
     var sidebarHeight = sidebar.clientHeight;
     var mainHeight = main.clientHeight;
     //console.log(aside.style.top, logoOriginalHeight, flmg, vw);
@@ -367,7 +367,7 @@ function checkLogoPosition() {
     //  aside.style.position = 'absolute';
     //}
    
-    if (mainRect.top < header.clientHeight*(1-5/15)) {
+    if (mainRect.top < header.clientHeight*(1-0/15)) {
       frontElement.style.position = 'fixed';
       frontElement.style.top = "0";
       backElement.style.position = 'fixed';
@@ -383,7 +383,7 @@ function checkLogoPosition() {
       //console.log(frontElement.width, frontElement.height, logoOriginalWidth, logoOriginalHeight);
       //console.log(hogehoge);
 
-      if (mainRect.top - flmg < logoOriginalHeight) {
+      /*if (mainRect.top - flmg < logoOriginalHeight) {
         frontElement.style.height = mainRect.top - flmg;
         aside.style.top = mainRect.top < 0 ? logoOriginalHeight + flmg : logoOriginalHeight - (mainRect.top - flmg); 
         if (mainRect.top < 0) {
@@ -403,7 +403,7 @@ function checkLogoPosition() {
         }
       } else { 
         frontElement.style.height = "auto";
-      }
+      }*/
    
     } else {
       frontElement.style.position = 'relative';
@@ -414,11 +414,11 @@ function checkLogoPosition() {
     }
     
     scrollTimeout = setTimeout(function() {
-      if (((mainRect.top < header.clientHeight*(1-5/15)) === false) || (((mainRect.top < header.clientHeight*(1-5/15)) === true) && (mainRect.top - flmg < logoOriginalHeight) === false)){
+      if (((mainRect.top < header.clientHeight*(1-0/15)) === false) || (((mainRect.top < header.clientHeight*(1-0/15)) === true) && (mainRect.top - flmg < logoOriginalHeight) === false)){
         frontElement.style.height = "auto";
         aside.style.position = 'absolute';
         aside.style.left = "0"; 
-        if ((mainRect.top < header.clientHeight*(1-5/15)) === false){
+        if ((mainRect.top < header.clientHeight*(1-0/15)) === false){
           aside.style.top = 0;
         }
       } else {
