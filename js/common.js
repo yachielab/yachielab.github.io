@@ -177,7 +177,7 @@ function setEN(){
 }
 
 function setJA(){ 
-  setDefaultAffilForJA();
+  //setDefaultAffilForJA();
   LANG = "JA";
   if (JAisReplaced===false) {
     EN.style.fontWeight   = '300';
