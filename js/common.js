@@ -388,26 +388,26 @@ function checkLogoPosition() {
       //console.log(hogehoge);
       
       if (params.get('lang') == "EN"){
-          var p1 = 0.15;
+          var p1 = 2.0;
           var p2 = 800;
       } else if (params.get('lang') == "JA"){
-          var p1 = 0.225;
+          var p1 = 1.5;
           var p2 = 1200;
       } else {
-          var p1 = 0.15;
+          var p1 = 2.0;
           var p2 = 800;
       }
       
-      if (mainRect.bottom < Math.min(p1 * mainHeight, p2)){
-        sidebar.style.top      = sidebarTopOriginal + (-1.0 * (Math.min(p1 * mainHeight, p2) - mainRect.bottom));
-        frontElement.style.top = -1.0 * (Math.min(p1 * mainHeight, p2) - mainRect.bottom);
-        backElement.style.top  = -1.0 * (Math.min(p1 * mainHeight, p2) - mainRect.bottom);
+      if (mainRect.bottom < sidebarHeight * p1){
+        sidebar.style.top      = sidebarTopOriginal + (-1.0 * (sidebarHeight * p1 - mainRect.bottom));
+        frontElement.style.top = -1.0 * (sidebarHeight * p1 - mainRect.bottom);
+        backElement.style.top  = -1.0 * (sidebarHeight * p1 - mainRect.bottom);
       } else {
         if (logoFlag == 0){
           sidebarTopOriginal = sidebar.getBoundingClientRect().top;
           logoFlag = 1; 
         }  
-        console.log("fuga", sidebarTopOriginal, sidebar.getBoundingClientRect().top);
+        console.log("fuga", sidebarTopOriginal, sidebarHeight, sidebar.getBoundingClientRect().top);
         sidebar.style.top = sidebarTopOriginal;
       }
 
