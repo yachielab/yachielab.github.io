@@ -391,7 +391,7 @@ function checkLogoPosition() {
           var p1 = 2.0;
           var p2 = 800;
       } else if (params.get('lang') == "JA"){
-          var p1 = 1.5;
+          var p1 = 1.7;
           var p2 = 1200;
       } else {
           var p1 = 2.0;
