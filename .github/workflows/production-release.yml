@@ -37,7 +37,7 @@ jobs:
   prepare:
     if: github.repository == 'yachielab/yachielab.github.io' && github.ref == 'refs/heads/main'
     name: Verify preview and prepare production
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 20
     outputs:
       commit: ${{ steps.gate.outputs.commit }}
@@ -90,7 +90,7 @@ jobs:
     if: github.event_name == 'workflow_dispatch' && !inputs.dry_run
     needs: prepare
     name: Publish the verified production artifact
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 15
     permissions:
       contents: read
