@@ -1,0 +1,107 @@
+name: Promote verified preview
+run-name: Production ${{ inputs.request_id || 'connection-check' }}
+
+on:
+  workflow_dispatch:
+    inputs:
+      preview_commit:
+        description: Exact commit currently published on preview
+        required: true
+        type: string
+      preview_run_id:
+        description: Successful preview workflow run
+        required: true
+        type: string
+      request_id:
+        description: CMS request identifier
+        required: true
+        type: string
+      dry_run:
+        description: Validate and prepare only; do not publish production
+        required: true
+        default: true
+        type: boolean
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/production-release.yml'
+      - '.github/release/**'
+
+permissions:
+  contents: read
+concurrency:
+  group: production-release
+  cancel-in-progress: false
+
+jobs:
+  prepare:
+    if: github.repository == 'yachielab/yachielab.github.io' && github.ref == 'refs/heads/main'
+    name: Verify preview and prepare production
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    outputs:
+      commit: ${{ steps.gate.outputs.commit }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7
+        with:
+          node-version: '24'
+          package-manager-cache: false
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7
+        with:
+          python-version: '3.13'
+      - name: Check the independently maintained release gate
+        run: python -m unittest discover -s .github/release -p 'test_*.py'
+      - name: Verify live preview and successful deployment
+        id: gate
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PREVIEW_COMMIT: ${{ inputs.preview_commit }}
+          PREVIEW_RUN_ID: ${{ inputs.preview_run_id }}
+          RELEASE_REQUEST_ID: ${{ inputs.request_id }}
+        run: python .github/release/promote.py verify
+      - name: Check out the fixed preview revision
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          repository: ponnhide/yachielab-preview
+          ref: ${{ steps.gate.outputs.commit }}
+          path: candidate
+          persist-credentials: false
+      - name: Reproduce the tested static artifact
+        working-directory: candidate
+        run: |
+          npm ci --ignore-scripts --no-audit --no-fund
+          node scripts/build_site.cjs --output dist/site
+      - name: Require identical bytes, then apply production host configuration
+        env:
+          RELEASE_REQUEST_ID: ${{ inputs.request_id || 'connection-check' }}
+        run: python .github/release/promote.py prepare candidate/dist/site
+      - name: Upload the verified production artifact
+        uses: actions/upload-pages-artifact@7b1f4a764d45c48632c6b24a0339c27f5614fb0b # v4
+        with:
+          path: candidate/dist/site
+      - name: Report validation-only completion
+        if: github.event_name != 'workflow_dispatch' || inputs.dry_run
+        run: echo 'Validation complete. Production was not deployed.' >> "$GITHUB_STEP_SUMMARY"
+
+  deploy:
+    if: github.event_name == 'workflow_dispatch' && !inputs.dry_run
+    needs: prepare
+    name: Publish the verified production artifact
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/configure-pages@983d7736d9b0ae728b81ab479565c72886d7745b # v5
+        with:
+          enablement: false
+      - id: deployment
+        uses: actions/deploy-pages@d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e # v4
